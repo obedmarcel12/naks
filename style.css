@@ -34,7 +34,9 @@ body.loaded #preloader {
 /* NAV 1 (top) */
 .nav-one {
   background: white;
+  position: relative;
   width: 100%;
+  z-index: 1030;
   height: 12vh;
   display: flex;
   justify-content: space-around;
@@ -584,6 +586,9 @@ body.loaded #preloader {
   background: #045d56;
   align-items: center;
   width: 100%;
+  position: sticky;
+  top: 0; /* 👈 use nav1 height here */
+  z-index: 1020;
   height: 14vh;
 }
 
@@ -768,6 +773,8 @@ a {
   .nav-one {
     background: white;
     width: 100%;
+    position: relative;
+    z-index: 1030;
     height: 9.5vh;
     display: flex;
     justify-content: space-around;
@@ -779,7 +786,10 @@ a {
     justify-content: space-around;
     background: #045d56;
     align-items: center;
+    position: sticky;
+    top: 0;
     width: 100%;
+    z-index: 1020;
     height: 14vh;
   }
 
