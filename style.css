@@ -573,7 +573,6 @@ body.loaded #preloader {
   background: white;
   width: 100%;
   z-index: 1030;
-  position: relative;
   height: 12vh;
   display: flex;
   justify-content: space-around;
@@ -586,7 +585,6 @@ body.loaded #preloader {
   background: #045d56;
   align-items: center;
   width: 100%;
-  position: sticky;
   top: 0; /* 👈 use nav1 height here */
   z-index: 1030;
   height: 14vh;
