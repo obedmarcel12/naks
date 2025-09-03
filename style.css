@@ -1,7 +1,7 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
-} */
+}
 
 html {
   scroll-behavior: smooth;
@@ -585,8 +585,7 @@ body.loaded #preloader {
   background: #045d56;
   align-items: center;
   width: 100%;
-  top: 0; /* 👈 use nav1 height here */
-  z-index: 1030;
+  z-index: 1050;
   height: 14vh;
 }
 
@@ -770,7 +769,6 @@ a {
 @media screen and (max-width: 576px) {
   .nav-one {
     background: white;
-    position: relative;
     width: 100%;
     z-index: 1030;
     height: 9.5vh;
@@ -783,11 +781,10 @@ a {
     display: flex;
     justify-content: space-around;
     background: #045d56;
-    position: sticky;
     align-items: center;
     top: 0;
     width: 100%;
-    z-index: 1020;
+    z-index: 1050;
     height: 14vh;
   }
 
