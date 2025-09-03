@@ -574,6 +574,7 @@ body.loaded #preloader {
   width: 100%;
   z-index: 1030;
   height: 12vh;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -784,6 +785,7 @@ a {
     align-items: center;
     top: 0;
     width: 100%;
+    position: fixed;
     z-index: 1050;
     height: 14vh;
   }
