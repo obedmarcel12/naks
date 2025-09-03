@@ -59,7 +59,7 @@
     <!-- END OF NAV1 -->
 
     <!-- SECOND NAVBAR -->
-    <nav class=" nav-two shadow">
+    <nav class="nav-two shadow">
       <!-- Logo -->
       <a href="index.html">
         <img
@@ -73,9 +73,11 @@
       <button
         class="btn d-md-none"
         type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mobileMenu"
         aria-controls="mobileMenu"
         aria-expanded="false"
-        id="menuToggle"
+        aria-label="Toggle navigation"
       >
         <i class="bi bi-list"></i>
       </button>
@@ -357,7 +359,7 @@
     </div>
 
     <!-- JS TO TOGGLE MENU -->
-    <script>
+    <!-- <script>
       const menuBtn = document.getElementById('menuToggle')
       const mobileMenu = document.getElementById('mobileMenu')
 
@@ -371,7 +373,7 @@
           bsCollapse.show()
         }
       })
-    </script>
+    </script> -->
 
     <!-- END OF SECOND NAV -->
 

@@ -711,12 +711,12 @@ a {
   height: 50px;
 }
 
-#menuToggle {
+.nav-two button i {
   color: #ffffff !important;
   font-size: 2rem;
 }
 
-.nav-two.scrolled #menuToggle {
+.nav-two.scrolled button i {
   color: #2b2a2a !important;
 }
 
@@ -798,7 +798,7 @@ a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 
-  #menuToggle {
+  .nav-two button i {
     color: #ffffff !important;
     font-size: 1.5rem;
   }
