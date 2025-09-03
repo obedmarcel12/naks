@@ -31,11 +31,6 @@ body.loaded #preloader {
   transition: all 0.6s ease;
 }
 
-.sticky-top {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Keep it above other content */
-}
-
 /* NAV 1 (top) */
 .nav-one {
   background: white;
