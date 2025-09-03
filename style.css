@@ -568,24 +568,27 @@ body.loaded #preloader {
 
 /* END OF CSS */
 
-/* NAV 1 (top) */
+/* NAV 1 (top, normal flow) */
 .nav-one {
   background: white;
   width: 100%;
   z-index: 1030;
   height: 12vh;
-
+  position: relative; /* stays in normal flow */
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+/* NAV 2 (fixed, just below nav1) */
 .nav-two {
   display: flex;
   justify-content: space-around;
   background: #045d56;
   align-items: center;
   width: 100%;
+  position: sticky;
+  top: 0; /* 👈 matches nav1 height */
   z-index: 1050;
   height: 14vh;
 }
@@ -785,7 +788,6 @@ a {
     align-items: center;
     top: 0;
     width: 100%;
-    position: sticky;
     z-index: 1050;
     height: 14vh;
   }
