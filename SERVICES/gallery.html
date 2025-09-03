@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Gallery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="shortcut icon" href="../Src/Naks logo.jpg" />
+    <style>
+      .sticky-top {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100; /* Keep it above other content */
+      }
+
+      body {
+        background: #e3e9e8;
+      }
+
+      .toggle-index {
+        z-index: 999 !important;
+      }
+
+      .Logo-Img {
+        width: 120px;
+        height: 50px;
+      }
+
+      .Naks-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        color: #29532b !important;
+      }
+
+      .Lounge-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        background: #045d56;
+        width: 15vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white !important;
+        margin-right: 20px !important;
+      }
+
+      /* Default navbar style */
+      .nav-two {
+        background-color: #198754; /* Bootstrap green (success) */
+        transition: all 0.3s ease-in-out;
+      }
+
+      .nav-two .nav-link {
+        color: white !important;
+        transition: color 0.3s ease-in-out;
+      }
+
+      /* Style when scrolled */
+      .nav-two.scrolled {
+        background-color: white !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-two.scrolled .nav-link {
+        color: black !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-two.scrolled .dropdown-menu {
+        background-color: white;
+      }
+
+      .nav-two.scrolled .dropdown-item {
+        color: black !important;
+      }
+      .color-code {
+        background: #045d56;
+        color: white;
+      }
+
+      .text-code {
+        color: #045d56;
+        text-shadow: 1px 1px 3px rgba(65, 64, 64, 0.9);
+        letter-spacing: 1px;
+      }
+      .gallery-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .gallery-img img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .gallery-img:hover img {
+        transform: scale(1.1);
+      }
+      .gallery-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .footer-section {
+        border-top: 2px solid rgb(185, 181, 181);
+        background: #031110;
+      }
+
+      .footer-link {
+        color: #facc15; /* light yellow */
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .footer-link:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- nav-1 -->
+    <nav
+      class="navbar bg-light d-flex align-items-center justify-content-around"
+    >
+      <div class="navbar nav toggle-index">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle Naks-nav"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            NAKS HOTEL
+          </a>
+          <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="../SERVICES/rooms.html"
+                >OUR ROOMS</a
+              >
+            </li>
+          </ul>
+        </li>
+      </div>
+      <!--  -->
+
+      <div class="navbar nav z-index">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle Lounge-nav"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            LOUNGE OUTLET
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">VIP BAR</a></li>
+            <li><a class="dropdown-item" href="#">RESTAURANT</a></li>
+            <li><a class="dropdown-item" href="#">RENDEZVOUS BAR</a></li>
+            <li><a class="dropdown-item" href="#">POOL BAR</a></li>
+            <li><a class="dropdown-item" href="#">NIGHT CLUB</a></li>
+          </ul>
+        </li>
+        <!--  -->
+        <ul class="navbar nav d-flex gap-3">
+          <a href=""><i class="bi bi-facebook text-success"></i></a>
+          <a href=""><i class="bi-instagram text-success"></i></a>
+          <a href=""><i class="bi-twitter text-success"></i></a>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- nav-2 -->
+    <nav
+      class="nav-two navbar navbar-expand-lg navbar-light sticky-top px-5 py-3"
+    >
+      <div class="container-fluid d-flex align-items-center justify-around">
+        <!-- Logo on the left -->
+        <a class="img-fluid" href="../index.html">
+          <img class="Logo-Img" src="../Src/Naks logo.jpg" alt="" />
+        </a>
+
+        <!-- Nav Links -->
+        <div class="d-flex mx-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="../index.html"> HOME </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./eatry.html">EATERY</a>
+            </li>
+
+            <li class="nav-item d-flex">
+              <a class="nav-link text-white" href="./gallery.html">GALLERY</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                id="navbarDropdown2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                FUNCTION HUB
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li><a class="dropdown-item" href="#">CAPITAL BAR </a></li>
+                <li><a class="dropdown-item" href="#">KAMSI POOL BAR</a></li>
+                <li><a class="dropdown-item" href="#">VICTORY HALL</a></li>
+                <li><a class="dropdown-item" href="#">CLUB HOUSE</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Search on the right -->
+        <li class="nav-item dropdown list-unstyled">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            id="navbarDropdown2"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            LEISURE ZONE
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <li><a class="dropdown-item" href="#">SWIMMING POOL</a></li>
+            <li><a class="dropdown-item" href="#">GYM</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">SQUASH</a></li>
+          </ul>
+        </li>
+      </div>
+    </nav>
+
+    <!-- end of nav2 -->
+
+    <section class="hero-video">
+      <video autoplay muted loop playsinline>
+        <source
+          src="../Src/WhatsApp Video 2025-08-09 at 1.40.49 AM.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <style>
+      .hero-video {
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hero-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This makes the video fill the space without black bars */
+        display: block;
+      }
+    </style>
+
+    <div class="container py-5">
+      <h2 class="text-code display-6 fw-bold shadow-text text-center mb-4">
+        <span class="text-warning">OUR</span> GALLERY
+      </h2>
+
+      <div class="row g-4">
+        <!-- Standard Room -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/IMG_2271.JPG" alt="Standard Room" />
+            <div class="gallery-text">Standard Room</div>
+          </div>
+        </div>
+
+        <!-- Deluxe Room -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/room-exodus.JPG" alt="Deluxe Room" />
+            <div class="gallery-text">Deluxe Room</div>
+          </div>
+        </div>
+
+        <!-- Royal Room -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/IMG_2266.JPG" alt="Royal Room" />
+            <div class="gallery-text">Royal Room</div>
+          </div>
+        </div>
+
+        <!-- Executive Room -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/IMG_2278.JPG" alt="Executive Room" />
+            <div class="gallery-text">Executive Room</div>
+          </div>
+        </div>
+
+        <!-- Family Room -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/family main.avif" alt="Family Room" />
+            <div class="gallery-text">Family Room</div>
+          </div>
+        </div>
+
+        <!-- Presidential Room -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/presidential main.avif" alt="Presidential Room" />
+            <div class="gallery-text">Presidential Room</div>
+          </div>
+        </div>
+
+        <!-- BUSINESS SUITE -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/business suite.avif" alt="Presidential Room" />
+            <div class="gallery-text">business suite</div>
+          </div>
+        </div>
+
+        <!-- Restaurant -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/restauarant main1.jpg" alt="Restaurant" />
+            <div class="gallery-text">Restaurant</div>
+          </div>
+        </div>
+
+        <!-- Bar -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/vip main3.jpg" alt="Bar" />
+            <div class="gallery-text">Vip Bar</div>
+          </div>
+        </div>
+
+
+        <!-- Pool -->
+        <div class="col-md-6">
+          <div class="gallery-img">
+            <img src="../Src/pool main_hero page.jpg" alt="Bar" />
+            <div class="gallery-text">Kamsi Pool Bar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-white pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <!-- About -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Naks Hotel & Towers</h5>
+            <p>
+              Experience luxury, comfort, and elegance in the heart of the city.
+              From world-class dining to exquisite leisure facilities, we
+              redefine hospitality.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="../index.html" class="footer-link">Home</a></li>
+              <li>
+                <a href="../SERVICES/eatry.html" class="footer-link">Eatery</a>
+              </li>
+              <li>
+                <a href="../SERVICES/gallery.html" class="footer-link"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Contact Us</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill text-warning"></i> 106 Usang Road,
+              Calabar, <br />
+              Cross River State, Nigeria
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-warning"></i> +2349052207771
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill text-warning"></i>
+              info@nakshotel.com
+            </p>
+          </div>
+        </div>
+
+        <hr class="bg-warning" />
+
+        <div class="text-center">
+          <p class="mb-0">
+            &copy; 2025 Naks Hotel & Towers. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.nav-two')
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled')
+        } else {
+          navbar.classList.remove('scrolled')
+        }
+      })
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

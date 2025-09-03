@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant - Naks Hotel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --hotel-green: #0b6623;
+        --hotel-gold: #ffd700;
+        --hotel-white: #ffffff;
+      }
+      .color-code {
+        background: #045d56;
+        color: white;
+      }
+      .Logo-Img {
+        width: 120px;
+        height: 50px;
+      }
+      header {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+        color: white;
+      }
+
+      .hero-section {
+        height: 40vh;
+        background: url('../Src/rendezvos\ two.jpg') center/cover no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--hotel-white);
+      }
+      .hero-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+      }
+      .hero-text {
+        position: relative;
+        text-align: center;
+        z-index: 2;
+      }
+      .hero-text h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--hotel-gold);
+      }
+      .gallery img {
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+      .special-card {
+        border: none;
+        background: var(--hotel-white);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .special-card:hover {
+        transform: translateY(-5px);
+      }
+      .btn-book {
+        background-color: var(--hotel-green);
+        color: var(--hotel-white);
+        border: none;
+      }
+      .btn-book:hover {
+        background-color: #094d1a;
+      }
+
+      .highlight-list li {
+        margin-bottom: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .footer-section {
+        background: #031110;
+      }
+
+      .footer-link {
+        color: #facc15; /* light yellow */
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .footer-link:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="b py-3 bg-light sticky-top">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="../index.html"
+          ><img class="Logo-Img" src="../Src/Naks logo.jpg" alt=""
+        /></a>
+        <a href="../index.html" class="btn btn-success rounded-0"
+          >Back to Home</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1 class="display-4 fw-bold">Rendezvous Moments</h1>
+      </div>
+    </section>
+
+    <!-- About Restaurant -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="fw-bold text-success text-center">
+          The Perfect Meeting Place
+        </h2>
+        <p
+          style="
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+              'Helvetica Neue', Arial !important;
+            font-weight: 500;
+          "
+          class="text-center mx-auto text-muted"
+          style="max-width: 700px"
+        >
+          The Rendezvous Bar is where elegance meets intimacy. Whether you’re
+          meeting friends, hosting a small <br />
+          business discussion, or enjoying a romantic evening, this space offers
+          the perfect atmosphere.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h3 class="text-center text-success mb-4">Gallery</h3>
+        <div class="row gallery g-4">
+          <div class="col-md-4">
+            <img src="../Src/rendezvous-first.jpg" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-4">
+            <img src="../Src/rendezvos two.jpg" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-4">
+            <img src="../Src/rendezvous second.jpg" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-5">
+      <h3 class="fw-bold text-dark">Highlights</h3>
+      <ul class="list-group highlight-list list-group-flush">
+        <li class="list-group-item">Premium wine selection</li>
+        <li class="list-group-item">Gourmet light bites</li>
+        <li class="list-group-item">Soft background music</li>
+        <li class="list-group-item">Elegant décor and lighting</li>
+      </ul>
+    </section>
+
+    <!-- Booking Button -->
+    <!-- <section class="py-5 text-center">
+      <a href="booking.html" class="btn btn-book btn-lg">Book a Table</a>
+    </section> -->
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-white pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <!-- About -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Naks Hotel & Towers</h5>
+            <p>
+              Experience luxury, comfort, and elegance in the heart of the city.
+              From world-class dining to exquisite leisure facilities, we
+              redefine hospitality.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="eatry.html" class="footer-link">Eatery</a></li>
+              <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Contact Us</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill text-warning"></i> 106 Usang Road,
+              Calabar, <br />
+              Cross River State, Nigeria
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-warning"></i> +2348039243902
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill text-warning"></i>
+              info@nakshotel.com
+            </p>
+          </div>
+        </div>
+
+        <hr class="bg-warning" />
+
+        <div class="text-center">
+          <p class="mb-0">
+            &copy; 2025 Naks Hotel & Towers. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

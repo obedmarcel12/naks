@@ -1,0 +1,781 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial !important;
+  overflow-x: hidden;
+}
+
+/* Loader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff url('https://i.gifer.com/YCZH.gif') no-repeat center center;
+  z-index: 9999;
+}
+
+/* Hide loader after load */
+body.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease;
+}
+
+/* NAV 1 (top) */
+.nav-one {
+  background: white;
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Dropdown inside nav 1 */
+.nav-one .dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.nav-one .dropbtn {
+  text-decoration: none;
+  color: #166b30;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.nav-one .dropbtn:hover {
+  color: green; /* highlight brand color */
+}
+
+/* Dropdown menu for nav 1 */
+.nav-one .dropdown-menu {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  min-width: 160px;
+}
+
+.nav-one .dropdown-menu a {
+  color: #333;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nav-one .dropdown-menu a:hover {
+  background: #f8fdf9;
+  color: green !important;
+  border-left: 3px solid green;
+  padding-left: 1.2rem;
+}
+
+/* RIGHT NAV WRAPPER */
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Lounge Outlet link */
+
+.Lounge-nav {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #045d56;
+  width: 15vw;
+  height: 6vh;
+  font-weight: 600;
+}
+
+.right-nav .Lounge-nav:hover {
+  background: #f8fdf9;
+  color: green;
+}
+
+/* Dropdown menu */
+.right-nav .dropdown {
+  position: relative;
+  z-index: 100000;
+}
+
+.right-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0; /* align to right edge */
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  min-width: 170px;
+}
+
+.right-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.right-nav .dropdown-menu li {
+  list-style: none;
+}
+
+.right-nav .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-decoration: none;
+
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.right-nav .dropdown-menu a:hover {
+  background: #f4fff6;
+  color: green;
+  border-left: 3px solid green;
+  padding-left: 1.2rem;
+}
+
+/* Social icons */
+.right-nav .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.right-nav .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f8fdf9;
+  color: rgb(50, 77, 50);
+  font-size: 1rem;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.right-nav .social-icons a:hover {
+  background: green;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.booking-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #031110 !important;
+  text-shadow: 1px 3px rgb(48, 49, 48);
+  text-decoration: none;
+  z-index: 2000;
+
+  /* Nigerian green-white gradient */
+  background: linear-gradient(135deg, #045d56, #ffffff, #228b22);
+  background-size: 200% 200%;
+  animation: bgMove 6s ease infinite, rotate-btn 6s linear infinite;
+
+  /* Glow effect */
+  box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
+
+  transition: transform 0.3s ease;
+}
+
+.booking-btn:hover {
+  transform: scale(1.1); /* little zoom on hover */
+}
+
+/* Background shimmer */
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Rotation */
+@keyframes rotate-btn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.color-code {
+  background: #045d56;
+  color: white;
+}
+
+.gallery {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 4vw;
+  height: 4vw;
+}
+
+.img-card {
+  object-fit: cover;
+  width: 100%;
+  height: 500px; /* Adjust height based on your layout */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Optional: clean shadow */
+}
+
+.section-Hero {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background: radial-gradient(rgb(8, 163, 8), rgb(16, 159, 202));
+  width: 100%;
+
+  height: auto;
+  padding-bottom: 70px;
+  padding-top: 90px;
+}
+
+.section-Hero button {
+  width: 9vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+}
+
+.section-Hero button a {
+  width: 9vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  border-radius: 5px;
+  height: 8vh;
+  position: absolute;
+}
+
+.section-Hero button a:hover {
+  background: white;
+  color: rgb(29, 28, 28) !important;
+  text-shadow: 1px 2px 3px rgb(36, 35, 35);
+}
+
+.section-Hero img {
+  width: 45vw;
+  height: 90vh;
+}
+
+.section-Hero small {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: rgb(228, 227, 227);
+  /* margin-left: 120px; */
+}
+
+.section-Hero span a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: rgb(228, 227, 227) !important;
+}
+
+#booking {
+  background-image: url('./Src/hotel.webp');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: saturation;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.background {
+  background: #f9fafa;
+  color: #045d56;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Shadow effect for heading and paragraph */
+.shadow-text {
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Paragraph spacing */
+.background p {
+  font-weight: 400;
+  font-family: 'Segoe UI', sans-serif;
+  /* padding-left: 20rem; */
+  margin: 0 auto;
+}
+
+/* Animation when section appears */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.function-hub-section {
+  background: white;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #045d56;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease;
+}
+
+.event-p {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  font-weight: 500;
+  /* color: #555; */
+  animation: fadeIn 1.2s ease;
+}
+
+.event-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.event-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  animation: zoomIn 0.6s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gallery-img {
+  width: 55vw;
+  height: 70vh;
+}
+
+.explore-span :hover {
+  background: rgb(37, 231, 124);
+  color: lch(99.19% 1.05 18.85) !important;
+}
+
+.view-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.view-div a {
+  background: rgb(224, 153, 46);
+  width: 15vw;
+  height: 7.5vh;
+  display: flex;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: large;
+  font-weight: 600;
+  justify-content: center;
+  color: rgb(46, 46, 46);
+  text-decoration: none;
+}
+
+.eatery-subtitle::after {
+  content: '';
+  display: block;
+  width: 270px; /* length of underline */
+  height: 4px; /* thickness */
+  margin: 8px auto 0;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #e0b462, #ffffff, #e0b462);
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100px;
+  }
+  100% {
+    background-position: 200px;
+  }
+}
+
+#gallery-preview {
+  background: #045d56;
+}
+
+.eatery-subtitle {
+  color: #252525; /* Gold tone */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(65, 64, 64, 0.8);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+}
+
+.eatery-description {
+  color: #fff8e7; /* Warm cream */
+  font-size: 1.05rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.shadow-culinary {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  background: white;
+  height: auto;
+  padding: 30px;
+}
+
+.text-code {
+  color: #045d56;
+}
+
+.explore-menu :hover {
+  background: rgb(37, 231, 124);
+  color: lch(99.19% 1.05 18.85) !important;
+}
+
+.leisure-background {
+  background: rgb(230, 229, 229);
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.9);
+  padding-bottom: 80px !important;
+}
+
+.leisure-card {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+.leisure-card .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  transition: background 0.4s ease;
+}
+.leisure-card:hover {
+  transform: translateY(-5px);
+}
+.leisure-card:hover {
+  background-size: 110%;
+}
+.leisure-card h3 {
+  margin-bottom: 5px;
+}
+
+.leisure-background p {
+  /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); */
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+}
+
+.contact-code {
+  color: #045d56;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.footer-section {
+  background: #031110;
+}
+
+.footer-link {
+  color: #facc15; /* light yellow */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* END OF CSS */
+
+#second-navbar {
+  display: flex;
+  justify-content: space-around;
+  background: #045d56;
+  align-items: center;
+  width: 100%;
+  height: 14vh;
+}
+
+#second-navbar button {
+  margin-left: 15rem;
+}
+
+#second-navbar ul a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: #cce5ff;
+  /* font-size: ; */
+}
+
+/* Style when scrolled */
+.nav-two.scrolled {
+  background-color: white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-two.scrolled .nav-links a {
+  color: rgb(78, 78, 78) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.nav-two.scrolled .booking-btn {
+  color: #031110 !important;
+  text-shadow: 1px 3px rgb(48, 49, 48) !important;
+}
+
+.hover-span .hover {
+  text-decoration: none;
+}
+
+.hover-span .hover:hover {
+  text-decoration: underline;
+}
+
+.nav-two .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  z-index: 100;
+}
+
+.dropdown .dropdown-menu a:hover {
+  background: #f8fdf9;
+  color: green !important;
+  border-left: 3px solid green;
+  padding-left: 1.2rem;
+}
+
+.nav-two .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333 !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.accordion-link {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #001f3f; /* Bootstrap primary color */
+  background-color: #f0f8ff; /* same as accordion background */
+  text-align: left;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+.accordion-link:hover {
+  background-color: #cce5ff; /* Bootstrap hover bg */
+  color: #001f3f;
+}
+
+.accordion-button {
+  background-color: #f0f8ff;
+  color: #001f3f;
+  font-weight: 500;
+  /* border-bottom: 1px solid #007bff; */
+  transition: background 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #007bff;
+  color: #001f3f;
+}
+
+.accordion-button:hover {
+  background-color: #cce5ff;
+}
+
+.accordion-body {
+  background: white !important;
+  border: 1px solid rgb(194, 238, 241) !important;
+}
+
+.accordion-body a {
+  color: #001f3f;
+  font-weight: 500;
+}
+
+.accordion-body a:hover {
+  text-decoration: underline;
+}
+
+.Logo-Img {
+  width: 120px;
+  border: 3px solid white;
+  height: 50px;
+}
+
+#menuToggle {
+  color: #ffffff !important;
+  font-size: 2rem;
+}
+
+.nav-two.scrolled #menuToggle {
+  color: #2b2a2a !important;
+}
+
+.nav-two.scrolled .Logo-Img {
+  width: 130px;
+  height: 40px;
+}
+
+/* RESPONSIVENESS */
+
+@media screen and (min-width: 768px) {
+  #mobileMenu {
+    display: none !important;
+  }
+}
+
+/* TABLET */
+@media screen and (max-width: 1075px) {
+  .Lounge-nav {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #045d56;
+    font-size: 0.8rem;
+    min-width: 125px;
+    min-height: 35px;
+  }
+  /*  */
+}
+/* 
+ */
+
+/* TABLET */
+@media screen and (max-width: 768px) {
+  .Lounge-nav {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #045d56;
+    font-size: 0.8rem;
+    min-width: 125px;
+    min-height: 35px;
+  }
+  /*  */
+}
+
+/* /* PHONE VIEW */
+@media screen and (max-width: 576px) {
+  /* .Logo-Img {
+    display: none;
+    width: 120px;
+    height: 50px;
+  } */
+}

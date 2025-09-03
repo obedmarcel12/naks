@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eatery — Naks Hotel and Towers</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Optional Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .sticky-top {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100; /* Keep it above other content */
+      }
+
+      .toggle-index {
+        z-index: 999 !important;
+      }
+
+      .Logo-Img {
+        width: 120px;
+        height: 50px;
+      }
+
+      .Naks-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        color: #29532b !important;
+      }
+
+      .Lounge-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        background: #045d56;
+        width: 15vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white !important;
+        margin-right: 20px !important;
+      }
+
+      /* Default navbar style */
+      .nav-two {
+        background-color: #198754; /* Bootstrap green (success) */
+        transition: all 0.3s ease-in-out;
+      }
+
+      .nav-two .nav-link {
+        color: white !important;
+        transition: color 0.3s ease-in-out;
+      }
+
+      /* Style when scrolled */
+      .nav-two.scrolled {
+        background-color: white !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-two.scrolled .nav-link {
+        color: black !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-two.scrolled .dropdown-menu {
+        background-color: white;
+      }
+
+      .nav-two.scrolled .dropdown-item {
+        color: black !important;
+      }
+
+      :root {
+        --brand-green: #0b6b3a;
+        --brand-gold: #d4af37;
+        --warm-bg: #ffedd5; /* soft peach for accents */
+        --dark: #0a0f2c;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial;
+        background: #fffaf6;
+        color: #1e293b;
+      }
+
+      /* Page header / hero */
+      .eatery-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url('../src/restauarant\ main2.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 80px 0;
+        position: relative;
+      }
+      .eatery-hero .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.15)
+        );
+      }
+      .eatery-hero .hero-inner {
+        position: relative;
+        z-index: 2;
+      }
+      .eatery-hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      }
+      .eatery-hero p.lead {
+        color: #fff7ea;
+        max-width: 760px;
+        margin: 0 auto 1.1rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+      .btn-accent {
+        background: linear-gradient(90deg, var(--brand-green), #0f8a51);
+        border: none;
+        color: #fff;
+        padding: 0.65rem 1.2rem;
+        border-radius: 0.35rem;
+        box-shadow: 0 10px 30px rgba(11, 107, 58, 0.18);
+      }
+
+      /* Staggered cards layout */
+      .bars-grid {
+        max-width: 1100px;
+        margin: 60px auto;
+      }
+      .bar-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: stretch;
+      }
+      .bar-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+      }
+      .bar-image {
+        position: relative;
+        overflow: hidden;
+      }
+      .bar-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .bar-card:hover .bar-image img {
+        transform: scale(1.06);
+      }
+      .bar-body {
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .bar-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+      .bar-sub {
+        color: #6b7280;
+        margin-bottom: 18px;
+        line-height: 1.6;
+      }
+      .bar-actions {
+        margin-top: auto;
+      }
+      .btn-outline-brand {
+        border: 2px solid var(--brand-green);
+        color: var(--brand-green);
+        background: transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+      .btn-outline-brand:hover {
+        background: var(--brand-green);
+        color: #fff;
+        border-color: var(--brand-green);
+      }
+
+      /* Alternate layout: flip image / text */
+      .bar-card.alt {
+        grid-template-columns: 1fr 1fr;
+      }
+      .bar-card.alt .bar-image {
+        order: 2;
+      }
+      .bar-card.alt .bar-body {
+        order: 1;
+        text-align: right;
+      }
+      .bar-card.alt .bar-title {
+        text-align: right;
+      }
+      .bar-card.alt .bar-sub {
+        text-align: right;
+      }
+
+      /* Small screens: stack vertically */
+      @media (max-width: 992px) {
+        .bar-card,
+        .bar-card.alt {
+          grid-template-columns: 1fr;
+        }
+        .bar-card.alt .bar-body {
+          text-align: left;
+          order: 2;
+        }
+        .bar-card.alt .bar-image {
+          order: 1;
+        }
+      }
+
+      /* spacing between cards */
+      .bars-grid .mb-4 {
+        margin-bottom: 28px;
+      }
+
+      /* small tag */
+      .bar-tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        border-radius: 30px;
+        background: rgba(11, 107, 58, 0.08);
+        color: var(--brand-green);
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      /* subtle reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .footer-section {
+        background: #031110;
+      }
+
+      .footer-link {
+        color: #facc15; /* light yellow */
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .footer-link:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav-1 -->
+    <nav class="navbar d-flex align-items-center justify-content-around">
+      <div class="navbar nav toggle-index">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle Naks-nav"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            NAKS HOTEL
+          </a>
+          <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="../SERVICES/rooms.html"
+                >OUR ROOMS</a
+              >
+            </li>
+          </ul>
+        </li>
+      </div>
+      <!--  -->
+
+      <div class="navbar nav z-index">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle Lounge-nav"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            LOUNGE OUTLET
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">VIP BAR</a></li>
+            <li><a class="dropdown-item" href="#">RESTAURANT</a></li>
+            <li><a class="dropdown-item" href="#">RENDEZVOUS BAR</a></li>
+            <li><a class="dropdown-item" href="#">POOL BAR</a></li>
+            <li><a class="dropdown-item" href="#">NIGHT CLUB</a></li>
+          </ul>
+        </li>
+        <!--  -->
+        <ul class="navbar nav d-flex gap-3">
+          <a href=""><i class="bi bi-facebook text-success"></i></a>
+          <a href=""><i class="bi-instagram text-success"></i></a>
+          <a href=""><i class="bi-twitter text-success"></i></a>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- nav-2 -->
+    <nav
+      class="nav-two navbar navbar-expand-lg navbar-light sticky-top px-5 py-3"
+    >
+      <div class="container-fluid d-flex align-items-center justify-around">
+        <!-- Logo on the left -->
+        <a class="img-fluid" href="../index.html">
+          <img class="Logo-Img" src="../Src/Naks logo.jpg" alt="" />
+        </a>
+
+        <!-- Nav Links -->
+        <div class="d-flex mx-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="../index.html"> HOME </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./eatry.html">EATERY</a>
+            </li>
+
+            <li class="nav-item d-flex">
+              <a class="nav-link text-white" href="./gallery.html">GALLERY</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                id="navbarDropdown2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                FUNCTION HUB
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li>
+                  <a class="dropdown-item" href="events.html">CAPITAL BAR </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="events.html">KAMSI POOL BAR</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="events.html">VICTORY HALL</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="events.html">CLUB HOUSE</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Search on the right -->
+        <li class="nav-item dropdown list-unstyled">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            id="navbarDropdown2"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            LEISURE ZONE
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <li><a class="dropdown-item" href="#">SWIMMING POOL</a></li>
+            <li><a class="dropdown-item" href="#">GYM</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">SQUASH</a></li>
+          </ul>
+        </li>
+      </div>
+    </nav>
+
+    <!-- Hero / Intro -->
+    <header class="eatery-hero">
+      <div class="overlay"></div>
+      <div class="container hero-inner text-center">
+        <h1>Naks Eatery</h1>
+        <p class="lead">
+          Explore our restaurant, VIP lounge, poolside bar, rendezvous and club
+          — each crafted to deliver unforgettable flavors and atmospheres.
+        </p>
+        <a href="#bars" class="btn btn-accent">Explore Venues</a>
+      </div>
+    </header>
+
+    <!-- Bars grid (staggered, alternating) -->
+    <main class="bars-grid" id="bars">
+      <div class="container">
+        <!-- VIP Bar (Card 1) -->
+        <div class="bar-card reveal mb-4">
+          <div class="bar-image">
+            <a href="../BARS/vip.html" aria-label="VIP Bar - Visit page">
+              <img
+                src="../Src/vip main1.jpg"
+                alt="VIP Bar at Naks Hotel"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="bar-body">
+            <span class="bar-tag">Exclusive</span>
+            <h3 class="bar-title">VIP Bar</h3>
+            <p class="bar-sub">
+              Private, elegant and intimate — premium spirits, curated small
+              plates, and bespoke service for guests who want privacy and
+              perfection.
+            </p>
+            <div class="bar-actions">
+              <a href="../BARS/vip.html" class="btn-outline-brand"
+                >Visit VIP Bar</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Restaurant (Card 2 - alternate layout) -->
+        <div class="bar-card alt reveal mb-4">
+          <div class="bar-image">
+            <a
+              href="../BARS/restaurant.html"
+              aria-label="Restaurant - Visit page"
+            >
+              <img
+                src="../Src/restauarant main3.jpg"
+                alt="Restaurant at Naks Hotel"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="bar-body">
+            <span class="bar-tag">Fine Dining</span>
+            <h3 class="bar-title">Restaurant</h3>
+            <p class="bar-sub">
+              A world-class dining experience focused on fresh, seasonal
+              ingredients and beautifully plated main courses crafted by our
+              head chef.
+            </p>
+            <div class="bar-actions">
+              <a href="../BARS/restaurant.html" class="btn-outline-brand"
+                >View Menu & Reserve</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Pool Bar (Card 3) -->
+        <div class="bar-card reveal mb-4">
+          <div class="bar-image">
+            <a href="../BARS/poolbar.html" aria-label="Pool Bar - Visit page">
+              <img
+                src="../Src/pool-people-main.jpg"
+                alt="Pool Bar at Naks Hotel"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="bar-body">
+            <span class="bar-tag">Relax</span>
+            <h3 class="bar-title">Pool Bar</h3>
+            <p class="bar-sub">
+              Cocktails and light bites poolside — the perfect place to unwind
+              with refreshing drinks and a relaxed vibe.
+            </p>
+            <div class="bar-actions">
+              <a href="../BARS/poolbar.html" class="btn-outline-brand"
+                >Visit Pool Bar</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Rendezvous (Card 4 - alternate) -->
+        <div class="bar-card alt reveal mb-4">
+          <div class="bar-image">
+            <a
+              href="../BARS/rendezvousbar.html"
+              aria-label="Rendezvous Bar - Visit page"
+            >
+              <img
+                src="../Src/rendezvos two.jpg"
+                alt="Rendezvous Bar at Naks Hotel"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="bar-body">
+            <span class="bar-tag">Intimate</span>
+            <h3 class="bar-title">Rendezvous</h3>
+            <p class="bar-sub">
+              An intimate setting for romantic evenings and quiet conversations
+              — specialty drinks and light protein plates available.
+            </p>
+            <div class="bar-actions">
+              <a href="../BARS/rendezvousbar.html" class="btn-outline-brand"
+                >Discover Rendezvous</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Club (Card 5 - full emphasis card) -->
+        <div class="bar-card reveal mb-4">
+          <div class="bar-image">
+            <a href="../BARS/nightclub.html" aria-label="Club Bar - Visit page">
+              <img
+                src="../Src/club.avif"
+                alt="Club Bar at Naks Hotel"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="bar-body">
+            <span class="bar-tag">Nightlife</span>
+            <h3 class="bar-title">Club</h3>
+            <p class="bar-sub">
+              Vibrant nightlife, live DJs and premium bottle service — our club
+              brings the energy for memorable nights and weekend parties.
+            </p>
+            <div class="bar-actions">
+              <a href="../BARS/nightclub.html" class="btn-outline-brand"
+                >Enter the Club</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-white pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <!-- About -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Naks Hotel & Towers</h5>
+            <p>
+              Experience luxury, comfort, and elegance in the heart of the city.
+              From world-class dining to exquisite leisure facilities, we
+              redefine hospitality.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="../index.html" class="footer-link">Home</a></li>
+              <li>
+                <a href="../SERVICES/eatry.html" class="footer-link">Eatery</a>
+              </li>
+              <li>
+                <a href="../SERVICES/gallery.html" class="footer-link"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Contact Us</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill text-warning"></i> 106 Usang Road,
+              Calabar, <br />
+              Cross River State, Nigeria
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-warning"></i> +2349052207771
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill text-warning"></i>
+              info@nakshotel.com
+            </p>
+          </div>
+        </div>
+
+        <hr class="bg-warning" />
+
+        <div class="text-center">
+          <p class="mb-0">
+            &copy; 2025 Naks Hotel & Towers. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Small reveal-on-scroll script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const items = document.querySelectorAll('.reveal')
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show')
+                observer.unobserve(entry.target)
+              }
+            })
+          },
+          { threshold: 0.12 }
+        )
+
+        items.forEach((i) => observer.observe(i))
+      })
+    </script>
+
+    <script>
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.nav-two')
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled')
+        } else {
+          navbar.classList.remove('scrolled')
+        }
+      })
+    </script>
+  </body>
+</html>

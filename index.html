@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naks-Hotel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--  -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="Src/Naks logo.jpg" />
+  </head>
+  <body>
+    <div id="preloader"></div>
+
+    <!-- nav-1 -->
+    <nav class="nav-one">
+      <div class="right-nav">
+        <li class="dropdown">
+          <a href="#" class="dropbtn">NAKS HOTEL</a>
+          <ul class="dropdown-menu">
+            <li><a href="SERVICES/rooms.html">OUR ROOMS</a></li>
+          </ul>
+        </li>
+      </div>
+
+      <div class="right-nav">
+        <li class="dropdown">
+          <a href="#" class="Lounge-nav">LOUNGE OUTLET</a>
+          <ul class="dropdown-menu">
+            <li><a href="BARS/vip.html">VIP BAR</a></li>
+            <li><a href="BARS/restaurant.html">RESTAURANT</a></li>
+            <li><a href="BARS/rendezvousbar.html">RENDEZVOUS BAR</a></li>
+            <li><a href="BARS/poolbar.html">POOL BAR</a></li>
+            <li><a href="BARS/nightclub.html">NIGHT CLUB</a></li>
+          </ul>
+        </li>
+        <span class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+        </span>
+      </div>
+    </nav>
+
+    <!-- END OF NAV1 -->
+
+    <!-- SECOND NAVBAR -->
+    <nav class="sticky-top nav-two" id="second-navbar" class="shadow">
+      <!-- Logo -->
+      <a href="index.html">
+        <img
+          src="src/Naks logo.jpg"
+          class="Logo-Img d-none d-sm-block"
+          alt="Logo"
+        />
+      </a>
+
+      <!-- Menu Icon (Mobile only) -->
+      <button
+        class="btn d-md-none"
+        type="button"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        id="menuToggle"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Desktop Nav Items -->
+      <ul class="nav-links d-none d-md-flex align-items-center m-0 p-0 gap-4">
+        <!-- <li class="list-unstyled">
+          <a class="" href="index.html">Home</a>
+        </li> -->
+
+        <li class="dropdown list-unstyled position-relative">
+          <!-- Main About Us link -->
+          <a class="" href="about.html">HOME</a>
+
+          <!-- Separate dropdown toggle -->
+          <a
+            class="dropdown-toggle-split"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%;
+              padding: 0 10px;
+            "
+          >
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </a>
+
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu">
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="board-directors.html">
+                ABOUT US
+              </a>
+            </li>
+            <!--  -->
+            <li class="">
+              <a class="dropdown-item" href="board-directors.html">
+                CONTACT US
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!--  -->
+
+        <li class="list-unstyled">
+          <a class="" href="index.html">EATERY</a>
+        </li>
+
+        <!--  -->
+
+        <li class="list-unstyled">
+          <a class="" href="index.html">GALLERY</a>
+        </li>
+
+        <li class="dropdown list-unstyled position-relative">
+          <!-- Main link to Services page -->
+          <a class="" href="services.html">FUNCTION HUB</a>
+
+          <!-- Separate dropdown toggle -->
+          <a
+            class="dropdown-toggle-split"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%;
+              padding: 0 10px;
+            "
+          >
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </a>
+
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu">
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="./services/oil-and-gas.html"
+                >CAPITAL BAR</a
+              >
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="./services/power.html"
+                >KAMSI POOL BAR</a
+              >
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="./services/oil-field-asset.html"
+                >VICTORY HALL</a
+              >
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="./services/man-power.html"
+                >CLUB HOUSE</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!--  -->
+
+        <li class="dropdown list-unstyled position-relative">
+          <!-- Main link to Services page -->
+          <a class="" href="services.html">LEISURE ZONE</a>
+
+          <!-- Separate dropdown toggle -->
+          <a
+            class="dropdown-toggle-split"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%;
+              padding: 0 10px;
+            "
+          >
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </a>
+
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu">
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="./services/oil-and-gas.html"
+                >SWIMMING POOL</a
+              >
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="./services/power.html">GYM</a>
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="./services/oil-field-asset.html"
+                >SQUASH</a
+              >
+            </li>
+          </ul>
+        </li>
+        <!--  -->
+
+        <li class="nav-item ms-auto list-unstyled">
+          <!-- Floating Booking Button -->
+          <a href="SERVICES/rooms.html" class="booking-btn"> Book Now</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Accordion Menu -->
+    <div class="d-md-none collapse px-3 mt-2" id="mobileMenu">
+      <div class="accordion" id="navAccordion">
+        <!--  -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#aboutCollapse"
+            >
+              HOME
+            </button>
+          </h2>
+          <div
+            id="aboutCollapse"
+            class="accordion-collapse collapse"
+            data-bs-parent="#navAccordion"
+          >
+            <div class="accordion-body">
+              <a href="about.html" class="d-block mb-1">About Us</a>
+            </div>
+            <div class="accordion-body">
+              <a href="board-directors.html" class="d-block mb-1"
+                >Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <a href="index.html" class="accordion-link">EATERY</a>
+          </h2>
+        </div>
+
+        <!--  -->
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <a href="index.html" class="accordion-link">GALLERY</a>
+          </h2>
+        </div>
+
+        <!--  -->
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#FunctionCollapse"
+            >
+              FUNCTION HUB
+            </button>
+          </h2>
+          <div
+            id="FunctionCollapse"
+            class="accordion-collapse collapse"
+            data-bs-parent="#navAccordion"
+          >
+            <div class="accordion-body">
+              <a href="about.html" class="d-block mb-1">CAPITAL BAR</a>
+            </div>
+            <div class="accordion-body">
+              <a href="board-directors.html" class="d-block mb-1"
+                >KAMSI POOL BAR
+              </a>
+            </div>
+            <div class="accordion-body">
+              <a href="board-directors.html" class="d-block mb-1"
+                >VICTORY HALL
+              </a>
+            </div>
+            <div class="accordion-body">
+              <a href="board-directors.html" class="d-block mb-1"
+                >CLUB HOUSE
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!--  -->
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#leisureCollapse"
+            >
+              LEISURE ZONE
+            </button>
+          </h2>
+          <div
+            id="leisureCollapse"
+            class="accordion-collapse collapse"
+            data-bs-parent="#navAccordion"
+          >
+            <div class="accordion-body">
+              <a href="about.html" class="d-block mb-1">SWIMMING POOL</a>
+            </div>
+            <div class="accordion-body">
+              <a href="board-directors.html" class="d-block mb-1">GYM </a>
+            </div>
+            <div class="accordion-body">
+              <a href="board-directors.html" class="d-block mb-1"
+                >SQUASH GAME
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+
+        <!--  -->
+      </div>
+    </div>
+
+    <!-- JS TO TOGGLE MENU -->
+    <script>
+      const menuBtn = document.getElementById('menuToggle')
+      const mobileMenu = document.getElementById('mobileMenu')
+
+      menuBtn.addEventListener('click', function () {
+        const isShown = mobileMenu.classList.contains('show')
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(mobileMenu)
+
+        if (isShown) {
+          bsCollapse.hide()
+        } else {
+          bsCollapse.show()
+        }
+      })
+    </script>
+
+    <!-- END OF SECOND NAV -->
+
+    <!-- Carousel hero page -->
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            class="img-card"
+            src="Src/unnamed.webp"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="img-card"
+            src="Src/hotel.webp"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="img-card"
+            src="Src/pool hero-page.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!--  -->
+
+    <section class="d-flex align-items-center gap-5 section-Hero">
+      <div data-aos="fade-left" data-aos-delay="200">
+        <span><img src="src/hotel.webp" alt="" /></span>
+      </div>
+
+      <!-- Text Content -->
+      <div class="d-flex flex-column gap-3">
+        <h1 class="text-white eatery-subtitle">
+          WELCOME TO NAKS HOTEL <br />
+          & TOWERS LTD
+        </h1>
+
+        <small class="lead">
+          FORMER NAF CLUB <br />
+          106 NDIDEM USANG ISO ROAD<br />
+          CALABAR , CROSS RIVER STATE , NIGERIA .
+        </small>
+
+        <br />
+
+        <div class="d-flex gap-4 align-items-center">
+          <button class="btn border-2 border border-info">
+            <a class="text-decoration-none text-white" href="about.html">
+              Read more
+            </a>
+          </button>
+
+          <!--  Phone Number -->
+          <span class="lead text-start">
+            <i class="bi bi-telephone text-white"></i>
+            <a href="tel:+2348109014512" class="text-decoration-none">
+              +234 810 901 4512
+            </a>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="text-center py-5"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url('Src/standard\ room.avif') center/cover no-repeat;
+        color: #fff;
+      "
+    >
+      <div class="container" data-aos="zoom-in" data-aos-delay="200">
+        <h2 class="fw-bold mb-4 display-6 shadow-text">
+          Ready to Experience Luxury & Comfort?
+        </h2>
+        <p class="lead mb-5 shadow-text">
+          Book your stay with Naks Hotel & Towers today and indulge in <br />
+          world-class hospitality in the heart of the city.
+        </p>
+        <a
+          href="./SERVICES/booking.html"
+          class="btn btn-success btn-lg px-5 py-2 rounded-0 shadow-lg"
+        >
+          Book Now
+        </a>
+      </div>
+    </section>
+
+    <section class="function-hub-section text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-3 section-title">EVENTS</h2>
+        <p class="mb-5 lead mb-5 shadow-text event-p">
+          Explore our elegant spaces for weddings, conferences, private parties,
+          and more.
+        </p>
+
+        <div class="row g-4" data-aos="fade-left" data-aos-delay="200">
+          <!-- Event Card 1 -->
+          <div class="col-md-4">
+            <div class="event-card">
+              <img
+                src="Src/premium_photo 3.avif"
+                alt="Wedding Setup"
+                class="event-img"
+              />
+              <h5 class="mt-3 fw-bold">Wedding Receptions</h5>
+              <p class="text-muted">
+                Create unforgettable memories with style and class.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event Card 2 -->
+          <div class="col-md-4">
+            <div class="event-card">
+              <img
+                src="Src/premium_photo-1706546720333-901d85d0cca8.avif"
+                alt="Conference Room"
+                class="event-img"
+              />
+              <h5 class="mt-3 fw-bold">Business Conferences</h5>
+              <p class="text-muted">
+                Fully equipped spaces for meetings and corporate events.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event Card 3 -->
+          <div class="col-md-4">
+            <div class="event-card">
+              <img
+                src="Src/photo-1524538392646-30e167f63062.avif"
+                alt="Birthday Party"
+                class="event-img"
+              />
+              <h5 class="mt-3 fw-bold">Birthday Parties</h5>
+              <p class="text-muted">
+                Celebrate in style with top-tier catering and ambiance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <span class="explore-span">
+        <a
+          href="./SERVICES/functionhub.html"
+          class="btn color-code rounded-0 px-5 mt-5"
+        >
+          Explore More
+        </a>
+      </span>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-3" id="gallery-preview">
+      <div class="container">
+        <div class="my-5">
+          <div
+            class="preview-mint justify-content-center align-items-center d-flex flex-column"
+          >
+            <h2
+              class="text-white display-6 fw-bold shadow-text eatery-subtitle position-relative d-inline-block"
+            >
+              <span style="color: rgb(224, 180, 98)">OUR</span> GALLERY
+            </h2>
+          </div>
+        </div>
+
+        <div class="row g-4" data-aos="zoom-in" data-aos-delay="200">
+          <!-- Card 1 -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded e h-100">
+              <img
+                src="Src/inte-img.avif"
+                class="card-img-top equal-img rounded-top"
+                alt="Hotel Interior"
+              />
+              <style>
+                .equal-img {
+                  height: 411px; /* set the same height for all */
+                  width: 100%;
+                  object-fit: cover; /* crops while keeping it sharp */
+                }
+              </style>
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Hotel Interior</h5>
+                <p class="card-text text-muted">
+                  Experience luxury and comfort in our stunning interior spaces.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded h-100">
+              <img
+                src="Src/IMG_2271.JPG"
+                class="card-img-top equal-img rounded-top"
+                alt="Luxury Room"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Luxury Room</h5>
+                <p class="card-text text-muted">
+                  Spacious, cozy, and designed for your ultimate relaxation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded h-100">
+              <img
+                src="Src/pool hero-page.jpg"
+                class="card-img-top equal-img rounded-top"
+                alt="Pool View"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Pool View</h5>
+                <p class="card-text text-muted">
+                  Refreshing and serene poolside experience for your leisure.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded h-100">
+              <img
+                src="Src/gym main1.jpg"
+                class="card-img-top equal-img rounded-top"
+                alt="Leisure Zone"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Leisure Zone</h5>
+                <p class="card-text text-muted">
+                  Stay fit and energized with our world-class leisure
+                  facilities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Views Button -->
+        <div class="text-center view-div mt-4">
+          <a
+            href="./SERVICES/gallery.html"
+            class="btn btn-outline-warning rounded-0 shadow-sm"
+          >
+            More Views
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section CSS -->
+    <style>
+      .gallery-item {
+        cursor: pointer;
+        transition: transform 0.4s ease;
+      }
+      .gallery-item:hover {
+        transform: scale(1.05);
+      }
+      .gallery-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
+    </style>
+
+    <section
+      class=""
+      style="background-color: #f8f9fa; padding-top: 80px; padding-bottom: 80px"
+    >
+      <div class="container" data-aos="flip-left" data-aos-delay="200">
+        <div class="row align-items-center g-5">
+          <!-- Image Column -->
+          <div class="col-lg-6 position-relative">
+            <img
+              src="Src/restauarant main1.jpg"
+              class="img-fluid rounded-4 shadow-lg"
+              alt="Hotel Restaurant"
+            />
+
+            <!-- Floating Card -->
+            <div class="floating-card p-4 rounded-4 shadow position-absolute">
+              <h5 class="fw-bold text-success mb-2">Special of the Day</h5>
+              <p class="mb-0 small text-muted">
+                Freshly grilled salmon with lemon butter sauce and garden
+                vegetables.
+              </p>
+            </div>
+          </div>
+
+          <!-- Text Column -->
+          <div class="col-lg-6">
+            <h2 class="fw-bold text-success mb-3">Fine Dining at Naks Hotel</h2>
+            <p class="text-muted mb-4">
+              Experience world-class cuisine crafted by our talented chefs. Our
+              menu blends international flavors with fresh local ingredients,
+              served in an elegant atmosphere designed for comfort and delight.
+            </p>
+
+            <!-- Feature List -->
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">
+                ✅ <span class="fw-semibold">Signature Gourmet Dishes</span>
+              </li>
+              <li class="mb-2">
+                ✅ <span class="fw-semibold">Cozy & Elegant Ambience</span>
+              </li>
+              <li class="mb-2">
+                ✅ <span class="fw-semibold">Professional Service</span>
+              </li>
+            </ul>
+
+            <a
+              href="./SERVICES/eatry.html"
+              class="btn btn-success text-light fw-bold px-4 py-2 rounded-pill"
+            >
+              View Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .floating-card {
+        background-color: white;
+        border-left: 5px solid #198754; /* Green accent */
+        bottom: -20px;
+        right: -20px;
+        width: 250px;
+      }
+    </style>
+
+    <section id="leisure-zone" class="py-5 leisure-background">
+      <div
+        class="container text-center"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <h2 class="fw-bold text-success mb-4">Leisure Zone</h2>
+        <p class="mb-5 text-muted">
+          Experience relaxation and recreation at Naks Hotel & Towers
+        </p>
+        <div class="row g-4">
+          <!-- Squash -->
+          <div class="col-md-4">
+            <div
+              class="leisure-card shadow-lg"
+              style="background-image: url('Src/squash_main.jpg')"
+            >
+              <div class="overlay">
+                <h3 class="fw-bold">Squash</h3>
+                <p>Challenge your skills in our professional squash courts.</p>
+                <a
+                  href="LEISURE-ZONE/squash.html"
+                  class="btn btn-success text-light rounded-pill px-5 py-2"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Swimming Pool -->
+          <div class="col-md-4">
+            <div
+              class="leisure-card shadow-lg"
+              style="background-image: url('Src/pool_swim-main.jpg')"
+            >
+              <div class="overlay">
+                <h3 class="fw-bold">Swimming Pool</h3>
+                <p>Relax and refresh at our crystal-clear luxury pool.</p>
+                <a
+                  href="LEISURE-ZONE/swimming.html"
+                  class="btn btn-success text-white rounded-pill px-5 py-2"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Gym -->
+          <div class="col-md-4">
+            <div
+              class="leisure-card shadow-lg"
+              style="background-image: url('Src/gym-main-oneisone.jpg')"
+            >
+              <div class="overlay">
+                <h3 class="fw-bold">Gym</h3>
+                <p>Stay fit with our modern, fully equipped gym facilities.</p>
+                <a
+                  href="LEISURE-ZONE/gymnasium.html"
+                  class="btn btn-success text-light rounded-pill px-5 py-2"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="py-5"
+      style="background-color: rgb(255, 255, 255)"
+    >
+      <div class="container" data-aos="fade-left" data-aos-delay="200">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold contact-code">CONTACT US</h2>
+          <p class="text-white-50">
+            We’re here to make your stay at Naks Hotel & Towers unforgettable.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Contact Info -->
+          <div class="col-lg-5 text-black-50">
+            <h4 class="text-warning mb-3">Contact Information</h4>
+            <p>
+              <i class="bi bi-geo-alt-fill contact-code"></i>
+              106 Usang Road, Calabar, <br />
+              Cross River State, Nigeria
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill contact-code"></i> +2348109014512
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill contact-code"></i>
+              reservations@naks.com
+            </p>
+            <div class="mt-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.7497669849868!2d8.34010237314015!3d4.981195994995083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106787a35be5ca3b%3A0x3b17a50852fb0a3c!2s106%20Ndidem%20Usang%20Iso%20Rd%2C%20Atekong%2C%20Calabar%20540281%2C%20Cross%20River!5e0!3m2!1sen!2sng!4v1755161524205!5m2!1sen!2sng"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="col-lg-7">
+            <form
+              method="POST"
+              action="...."
+              class="p-4 bg-white shadow-lg rounded"
+            >
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    class="form-control"
+                    placeholder="+1234567890"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    class="form-control"
+                    placeholder="Booking Inquiry"
+                    required
+                  />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Message</label>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    class="form-control"
+                    placeholder="Write your message..."
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-12 text-end">
+                  <button
+                    type="submit"
+                    class="btn rounded-0 btn-success px-4 fw-bold"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-white pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <!-- About -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Naks Hotel & Towers</h5>
+            <p>
+              Experience luxury, comfort, and elegance in the heart of the city.
+              From world-class dining to exquisite leisure facilities, we
+              redefine hospitality.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#index" class="footer-link">Home</a></li>
+              <li>
+                <a href="./SERVICES/eatry.html" class="footer-link">Eatery</a>
+              </li>
+              <li>
+                <a href="./SERVICES/gallery.html" class="footer-link"
+                  >Gallery</a
+                >
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Contact Us</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill text-warning"></i> 106 Usang Road,
+              Calabar, <br />
+              Cross River State, Nigeria
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-warning"></i> +2349052207771
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill text-warning"></i>
+              info@nakshotel.com
+            </p>
+          </div>
+        </div>
+
+        <hr class="bg-warning" />
+
+        <div class="text-center">
+          <p class="mb-0">
+            &copy; 2025 Naks Hotel & Towers. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.nav-two')
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled')
+        } else {
+          navbar.classList.remove('scrolled')
+        }
+      })
+    </script>
+
+    <!--  -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200 /* Animation speed */,
+        once: true /* Animate only once */,
+        offset: 100 /* Trigger point */,
+      })
+    </script>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded')
+      })
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

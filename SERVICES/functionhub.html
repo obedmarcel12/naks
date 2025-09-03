@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Loader background */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff url('https://i.gifer.com/YCZH.gif') no-repeat center
+          center;
+        z-index: 9999;
+      }
+
+      /* Hide loader after load */
+      body.loaded #preloader {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.6s ease;
+      }
+
+      .Logo-Img {
+        width: 120px;
+        height: 50px;
+      }
+
+      .Naks-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        color: #29532b !important;
+      }
+
+      .Lounge-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        background: #045d56;
+        width: 15vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white !important;
+        margin-right: 20px !important;
+      }
+
+      /* Default navbar style */
+      .nav-two {
+        background-color: #ffffff; /* Bootstrap green (success) */
+        transition: all 0.3s ease-in-out;
+      }
+
+      .nav-two .nav-link {
+        color: black !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        transition: color 0.3s ease-in-out;
+      }
+
+      /* Style when scrolled */
+      .nav-two.scrolled {
+        background-color: white !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-two.scrolled .nav-link {
+        color: black !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-two.scrolled .dropdown-menu {
+        background-color: white;
+      }
+
+      .nav-two.scrolled .dropdown-item {
+        color: black !important;
+      }
+
+      /* Default navbar style */
+
+      .room-dark {
+        background: rgb(224, 153, 46);
+      }
+
+      .footer-section {
+        border-top: 2px solid white;
+        background: #031110;
+      }
+
+      .footer-link {
+        color: #facc15; /* light yellow */
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .footer-link:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+      .Core-Serv-sec {
+        background: rgb(224, 153, 46);
+        width: 100%;
+        height: auto;
+        padding: 50px;
+        /* padding-top: 20px; */
+        /* padding-bottom: 50px; */
+      }
+      .serv-div {
+        display: flex;
+        gap: 3.5vh;
+      }
+      .serv-div a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: rgb(33, 33, 72);
+        font-size: large;
+        text-align: center;
+        gap: 3vh;
+      }
+
+      .serv-div a img {
+        width: 38.5vw;
+        height: 85vh;
+      }
+
+      .serv-div a img:hover {
+        padding-bottom: 20px;
+      }
+
+      .Core-Serv-sec p {
+        color: rgb(238, 236, 236);
+        background: #031110;
+        padding: 8px;
+      }
+
+      .eatery-subtitle {
+        color: rgb(224, 153, 46);
+        font-weight: bold;
+        background: #031110;
+      }
+
+      .eatery-description {
+        /* color: #eceaea; */
+        font-size: 1rem;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(8, 8, 8, 0.7);
+      }
+
+      .footer-section {
+        border-top: 2px solid white;
+        background: #031110;
+      }
+
+      .footer-link {
+        color: #facc15; /* light yellow */
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .footer-link:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader"></div>
+    <!-- nav-2 -->
+    <nav
+      class="navbar nav-two navbar-expand-lg navbar-light text-black-50 sticky-top px-5 py-3"
+    >
+      <div class="container-fluid d-flex align-items-center justify-around">
+        <!-- Logo on the left -->
+        <a class="img-fluid" href="../index.html">
+          <img class="Logo-Img" src="../Src/Naks logo.jpg" alt="" />
+        </a>
+
+        <!-- Nav Links -->
+        <div class="d-flex mx-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html"> HOME </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./eatry.html">EATERY</a>
+            </li>
+
+            <li class="nav-item d-flex">
+              <a class="nav-link" href="./gallery.html">GALLERY</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Search on the right -->
+        <li class="nav-item dropdown list-unstyled">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown2"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            LEISURE ZONE
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <li><a class="dropdown-item" href="#">SWIMMING POOL</a></li>
+            <li><hr class="dropdown-divider" /></li>
+
+            <li><a class="dropdown-item" href="#">GYM</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">SQUASH</a></li>
+          </ul>
+        </li>
+      </div>
+    </nav>
+
+    <!--  -->
+    <section class="Core-Serv-sec">
+      <section
+        class="py-5 border border-2 border-light d-flex align-items-center justify-content-center flex-column gap-2"
+      >
+        <h2 class="mb-4 py-1 px-3 eatery-subtitle">Function Hub</h2>
+        <div class="serv-div">
+          <a href="../SERVICES/events.html">
+            <img src="../src/capital bar main.jpg" alt="" />
+            <p class="eatery-description">CAPITAL BAR</p>
+          </a>
+          <!--  -->
+          <a href="../SERVICES/events.html">
+            <img src="../src/pool hero-page.jpg" alt="" />
+            <p class="eatery-description">KAMSI POOL BAR</p>
+          </a>
+        </div>
+        <!--  -->
+        <div class="serv-div">
+          <a href="../SERVICES/events.html">
+            <img src="../src/victory hall main.jpg" alt="" />
+            <p class="eatery-description">VICTORY HALL</p>
+          </a>
+          <!--  -->
+          <a href="../SERVICES/events.html">
+            <img src="../src/club.avif" alt="" />
+            <p class="eatery-description">CLUB HOUSE</p>
+          </a>
+        </div>
+        <!--  -->
+      </section>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-white pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <!-- About -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Naks Hotel & Towers</h5>
+            <p>
+              Experience luxury, comfort, and elegance in the heart of the city.
+              From world-class dining to exquisite leisure facilities, we
+              redefine hospitality.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="eatry.html" class="footer-link">Eatery</a></li>
+              <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold text-warning">Contact Us</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill text-warning"></i> 106 Usang Road,
+              Calabar, <br />
+              Cross River State, Nigeria
+            </p>
+            <p>
+              <i class="bi bi-telephone-fill text-warning"></i> +2349052207771
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill text-warning"></i>
+              info@nakshotel.com
+            </p>
+          </div>
+        </div>
+
+        <hr class="bg-warning" />
+
+        <div class="text-center">
+          <p class="mb-0">
+            &copy; 2025 Naks Hotel & Towers. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded')
+      })
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

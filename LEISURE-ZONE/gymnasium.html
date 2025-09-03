@@ -1,0 +1,265 @@
+<!-- Gym Page -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym & Fitness - Luxury Hotel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .Logo-Img {
+        width: 120px;
+        height: 50px;
+      }
+
+      .Naks-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        color: #29532b !important;
+      }
+
+      .Lounge-nav {
+        font-size: 15px;
+        font-weight: 500;
+        font-family: sans-serif !important;
+        background: #045d56;
+        width: 15vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white !important;
+        margin-right: 20px !important;
+      }
+
+      /* Navbar */
+      .nav-two {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        background-color: #ffffff;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .nav-two .nav-link {
+        color: black !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        transition: color 0.3s ease-in-out;
+      }
+
+      .nav-two.scrolled {
+        background-color: white !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Hero Section */
+      .hero-gym {
+        background: url('../Src/gym main1.jpg') center/cover no-repeat;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+      .hero-gym::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      /* Gallery */
+      .gallery-card img {
+        height: 250px;
+        object-fit: cover;
+      }
+
+      /* Manager Contact */
+      .manager-contact {
+        display: inline-block;
+        padding: 12px 25px;
+        border: 2px solid #198754;
+        border-radius: 30px;
+        font-weight: 600;
+        color: #198754;
+        transition: all 0.3s ease;
+      }
+      .manager-contact:hover {
+        background: #198754;
+        color: #fff;
+      }
+
+      .background-dark {
+        background: #031110;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar nav-two navbar-expand-lg navbar-light text-black-50 sticky-top px-5 py-3"
+    >
+      <div class="container-fluid d-flex align-items-center justify-around">
+        <a class="img-fluid" href="../index.html">
+          <img class="Logo-Img" src="../Src/Naks logo.jpg" alt="" />
+        </a>
+
+        <div class="d-flex mx-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html"> HOME </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./eatry.html">EATERY</a>
+            </li>
+            <li class="nav-item d-flex">
+              <a class="nav-link" href="./gallery.html">GALLERY</a>
+            </li>
+          </ul>
+        </div>
+
+        <li class="nav-item dropdown list-unstyled">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown2"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            FUNCTION HUB
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <li><a class="dropdown-item" href="#">CAPITAL BAR </a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">KAMSI POOL BAR</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">VICTORY HALL</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">CLUB HOUSE</a></li>
+          </ul>
+        </li>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-gym">
+      <div class="hero-content">
+        <h1>Our State-of-the-Art Gym</h1>
+        <p>Train, sweat, and achieve your fitness goals</p>
+      </div>
+    </section>
+
+    <!-- About Gym -->
+    <section class="py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold text-success mb-3">Why Choose Our Gym?</h2>
+        <p class="text-muted mb-4">
+          Our modern gym is fully equipped with high-quality machines and
+          professional trainers to help you stay fit and energized during your
+          stay. From cardio to strength training, we’ve got everything you need
+          to reach your goals.
+        </p>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-5">Gym Features</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card shadow-lg h-100 text-center">
+              <div class="card-body">
+                <h5 class="fw-bold text-success">Cardio Machines</h5>
+                <p class="text-muted">
+                  Treadmills, bikes, and elliptical trainers for endurance and
+                  stamina building.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-lg h-100 text-center">
+              <div class="card-body">
+                <h5 class="fw-bold text-success">Strength Training</h5>
+                <p class="text-muted">
+                  Fully equipped with free weights and resistance machines for
+                  muscle building.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-lg h-100 text-center">
+              <div class="card-body">
+                <h5 class="fw-bold text-success">Personal Trainers</h5>
+                <p class="text-muted">
+                  Professional trainers available to guide and motivate your
+                  fitness journey.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-5">Gym Gallery</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card shadow-sm gallery-card">
+              <img src="../Src/gym-twoisiwo.jpg" class="card-img-top" alt="Gym View" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm gallery-card">
+              <img src="../Src/gym main1.jpg" class="card-img-top" alt="Gym Equipment" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm gallery-card">
+              <img src="../Src/gym-twoisiwo.jpg" class="card-img-top" alt="Fitness Training" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <footer class="text-center py-5 background-dark text-white">
+      <h3 class="fw-bold">Want to Join a Session?</h3>
+      <p>Contact our gym manager directly to plan your workout experience.</p>
+      <a href="tel:+2348032225566" class="manager-contact">
+        Manager: +234 803 222 5566
+      </a>
+      <br /><br />
+      <a href="../index.html" class="btn btn-outline-light px-4">
+        ← Back to Home
+      </a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
