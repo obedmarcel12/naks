@@ -1,7 +1,7 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
-}
+} */
 
 html {
   scroll-behavior: smooth;
@@ -29,18 +29,6 @@ body.loaded #preloader {
   opacity: 0;
   visibility: hidden;
   transition: all 0.6s ease;
-}
-
-/* NAV 1 (top) */
-.nav-one {
-  background: white;
-  position: relative;
-  width: 100%;
-  z-index: 1030;
-  height: 12vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 /* Dropdown inside nav 1 */
@@ -580,6 +568,18 @@ body.loaded #preloader {
 
 /* END OF CSS */
 
+/* NAV 1 (top) */
+.nav-one {
+  background: white;
+  width: 100%;
+  z-index: 1030;
+  position: relative;
+  height: 12vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .nav-two {
   display: flex;
   justify-content: space-around;
@@ -588,7 +588,7 @@ body.loaded #preloader {
   width: 100%;
   position: sticky;
   top: 0; /* 👈 use nav1 height here */
-  z-index: 1020;
+  z-index: 1030;
   height: 14vh;
 }
 
@@ -772,8 +772,8 @@ a {
 @media screen and (max-width: 576px) {
   .nav-one {
     background: white;
-    width: 100%;
     position: relative;
+    width: 100%;
     z-index: 1030;
     height: 9.5vh;
     display: flex;
@@ -785,8 +785,8 @@ a {
     display: flex;
     justify-content: space-around;
     background: #045d56;
-    align-items: center;
     position: sticky;
+    align-items: center;
     top: 0;
     width: 100%;
     z-index: 1020;
