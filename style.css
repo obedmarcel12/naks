@@ -775,7 +775,7 @@ a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
     /* padding: 0.5rem 0.8rem; */
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     transition: color 0.2s ease;
   }
 
@@ -786,7 +786,7 @@ a {
     align-items: center;
     justify-content: center;
     background: #045d56;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     height: 4vh;
     min-width: 120px;
     min-height: 30px;
@@ -794,22 +794,7 @@ a {
 
   /* Social icons */
   .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px !important;
-  }
-
-  .right-nav .social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #f8fdf9;
-    color: rgb(50, 77, 50);
-    font-size: 0.6rem;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    display: none !important;
   }
 
   .right-nav .dropdown-menu {
@@ -821,7 +806,7 @@ a {
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    min-width: 110px;
+    min-width: 150px;
   }
 
   .right-nav .dropdown-menu a {
@@ -830,7 +815,7 @@ a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: block;
     padding: 0.5rem 1rem;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     transition: all 0.2s ease;
   }
 }
