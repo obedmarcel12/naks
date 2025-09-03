@@ -31,6 +31,11 @@ body.loaded #preloader {
   transition: all 0.6s ease;
 }
 
+.sticky-top {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Keep it above other content */
+}
+
 /* NAV 1 (top) */
 .nav-one {
   background: white;
@@ -765,6 +770,24 @@ a {
 
 /* /* PHONE VIEW */
 @media screen and (max-width: 576px) {
+  .nav-one {
+    background: white;
+    width: 100%;
+    height: 9.5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #second-navbar {
+    display: flex;
+    justify-content: space-around;
+    background: #045d56;
+    align-items: center;
+    width: 100%;
+    height: 14vh;
+  }
+
   #menuToggle {
     color: #ffffff !important;
     font-size: 1.5rem;
@@ -806,7 +829,7 @@ a {
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    min-width: 150px;
+    min-width: 130px;
   }
 
   .right-nav .dropdown-menu a {
