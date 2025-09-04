@@ -745,6 +745,32 @@ a {
 
 /* TABLET */
 @media screen and (max-width: 1075px) {
+  /* NAV 1 (top) */
+  .nav-one {
+    background: white;
+    width: 100%;
+    z-index: 1030;
+    height: 12vh;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* NAV 2 (always sticky after nav1) */
+  .nav-two {
+    background: #045d56;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+    height: 14vh;
+    width: 100%;
+    position: sticky; /* 👈 KEY */
+    top: 0; /* sits at the very top once nav1 scrolls out */
+    z-index: 100;
+  }
+
   .Lounge-nav {
     text-decoration: none;
     color: #fff;
@@ -763,6 +789,32 @@ a {
 
 /* TABLET */
 @media screen and (max-width: 768px) {
+  /* NAV 1 (top) */
+  .nav-one {
+    background: white;
+    width: 100%;
+    z-index: 1030;
+    height: 12vh;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* NAV 2 (always sticky after nav1) */
+  .nav-two {
+    background: #045d56;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+    height: 14vh;
+    width: 100%;
+    position: sticky; /* 👈 KEY */
+    top: 0; /* sits at the very top once nav1 scrolls out */
+    z-index: 100;
+  }
+
   .Lounge-nav {
     text-decoration: none;
     color: #fff;
@@ -780,25 +832,30 @@ a {
 
 /* /* PHONE VIEW */
 @media screen and (max-width: 576px) {
+  /* NAV 1 (top) */
   .nav-one {
     background: white;
     width: 100%;
     z-index: 1030;
-    height: 9.5vh;
+    height: 12vh;
     display: flex;
+    position: relative;
     justify-content: space-around;
     align-items: center;
   }
 
+  /* NAV 2 (always sticky after nav1) */
   .nav-two {
+    background: #045d56;
     display: flex;
     justify-content: space-around;
-    background: #045d56;
     align-items: center;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+    padding: 0 1rem;
     height: 14vh;
+    width: 100%;
+    position: sticky; /* 👈 KEY */
+    top: 0; /* sits at the very top once nav1 scrolls out */
+    z-index: 100;
   }
 
   .nav-two.scrolled {
