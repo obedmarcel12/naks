@@ -20,8 +20,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!--  -->
-    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="Src/Naks logo.jpg" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="preloader"></div>
@@ -232,7 +232,7 @@
     </nav>
 
     <!-- Mobile Accordion Menu -->
-    <div class="collapse sticky-top d-md-none pt-0 mt-0" id="mobileMenu">
+    <div class="collapse d-md-none" id="mobileMenu">
       <div class="accordion" id="navAccordion">
         <!-- HOME -->
         <div class="accordion-item">
@@ -995,17 +995,6 @@
       </div>
     </footer>
 
-    <script>
-      window.addEventListener('scroll', function () {
-        const navbar = document.querySelector('.nav-two')
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled')
-        } else {
-          navbar.classList.remove('scrolled')
-        }
-      })
-    </script>
-
     <!--  -->
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1028,5 +1017,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
