@@ -597,11 +597,7 @@ body.loaded #preloader {
 
 /* Style when scrolled */
 .nav-two.scrolled {
-  top: 0 !important; 
-  left: 0;
-  z-index: 100;
-  position: sticky !important;
-  height: 14vh !important;
+  top: 0 !important;
   background: white !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -722,6 +718,7 @@ a {
   height: 50px;
 }
 
+
 .nav-two button i {
   color: #ffffff !important;
   font-size: 2rem;
@@ -785,15 +782,12 @@ a {
     min-height: 35px;
   }
 
-  .nav-two button {
-    margin-left: 15rem;
-  }
-
   /*  */
 }
 
 /* /* PHONE VIEW */
 @media screen and (max-width: 576px) {
+  /* NAV 1 (top) */
   .nav-one {
     background: white;
     width: 100%;
@@ -815,20 +809,9 @@ a {
     width: 100%;
     position: sticky;
     top: 12vh; /* match nav-one height */
-    /* left: 0; */
+    left: 0;
     z-index: 100;
     transition: all 0.3s ease;
-  }
-
-  /* Style when scrolled */
-  .nav-two.scrolled {
-    top: 0 !important; /* 👈 moves up when nav1 scrolls out */
-    background: white !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav-two button {
-    margin-left: 15rem;
   }
 
   .nav-two button i {
