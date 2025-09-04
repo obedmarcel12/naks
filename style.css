@@ -584,13 +584,12 @@ body.loaded #preloader {
 .nav-two {
   background: #045d56;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* 👈 keeps items inside neatly */
   align-items: center;
-  padding: 0 1rem;
   height: 14vh;
   width: 100%;
-  position: fixed;
-  top: 12vh; /* 👈 match nav-one height */
+  position: sticky;
+  top: 12vh; /* match nav-one height */
   left: 0;
   z-index: 100;
   transition: all 0.3s ease;
@@ -603,15 +602,15 @@ body.loaded #preloader {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.nav-two button {
+    margin-left: 15rem;
+  }
+
 /* Mobile accordion menu */
 #mobileMenu {
   background: #f8f9fa;
   position: relative;
   z-index: 1040;
-}
-
-.nav-two button {
-  margin-left: 15rem;
 }
 
 .nav-two ul a {
@@ -739,12 +738,6 @@ a {
 
 /* RESPONSIVENESS */
 
-@media screen and (min-width: 768px) {
-  #mobileMenu {
-    display: none !important;
-  }
-}
-
 /* LARGE SCREEN  */
 @media screen and (max-width: 1075px) {
   .Lounge-nav {
@@ -797,14 +790,13 @@ a {
   .nav-two {
     background: #045d56;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* 👈 keeps items inside neatly */
     align-items: center;
-    padding: 0 1rem;
     height: 14vh;
     width: 100%;
-    position: fixed;
-    top: 12vh; /* 👈 match nav-one height */
-    left: 0;
+    position: sticky;
+    top: 12vh; /* match nav-one height */
+    /* left: 0; */
     z-index: 100;
     transition: all 0.3s ease;
   }
@@ -815,6 +807,10 @@ a {
     background: white !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+  /* .nav-two button {
+    margin-left: auto;
+  } */
 
   .nav-two button i {
     color: #ffffff !important;
