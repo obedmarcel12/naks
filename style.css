@@ -10,7 +10,8 @@ html {
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  overflow-y: auto !important; /* keep vertical scrolling normal */
 }
 
 /* Loader background */
@@ -341,13 +342,6 @@ body.loaded #preloader {
   }
 }
 
-.function-hub-section {
-  background: white;
-  padding: 80px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
 .section-title {
   font-size: 2.5rem;
   color: #045d56;
@@ -355,20 +349,38 @@ body.loaded #preloader {
   animation: fadeInDown 1s ease;
 }
 
+.function-hub-section {
+  background: white;
+  padding: 80px 20px;
+  position: relative;
+  overflow-x: hidden; /* 👈 prevent horizontal overflow */
+  overflow-y: visible; /* keep vertical scrolling */
+}
+
+/* Fix Bootstrap row negative margins */
+.function-hub-section .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Event description text */
 .event-p {
   font-size: 1.2rem;
   font-family: sans-serif;
   font-weight: 500;
-  /* color: #555; */
   animation: fadeIn 1.2s ease;
 }
 
+/* Event cards */
 .event-card {
   background: white;
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease, box-shadow 0.3s ease;
+  max-width: 100%; /* 👈 never exceed viewport */
+  overflow-wrap: break-word; /* 👈 prevent text overflow */
+  transform: translateZ(0); /* 👈 helps fix zoom overflow */
 }
 
 .event-card:hover {
@@ -376,12 +388,14 @@ body.loaded #preloader {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Images inside event cards */
 .event-img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   border-radius: 12px;
   animation: zoomIn 0.6s ease-in-out;
+  transform: translateZ(0); /* 👈 prevents scale overflow */
 }
 
 /* Animations */
@@ -471,6 +485,15 @@ body.loaded #preloader {
 
 #gallery-preview {
   background: #045d56;
+}
+
+.floating-car {
+  bottom: 20px; /* 👈 stick near the bottom of the image */
+  right: 20px; /* 👈 stick near the right edge */
+  background: white; /* card background */
+  max-width: 250px; /* prevent it from being too wide */
+  font-size: 0.9rem;
+  border-left: 5px solid #198754; /* Green accent */
 }
 
 .eatery-subtitle {
@@ -718,7 +741,6 @@ a {
   height: 50px;
 }
 
-
 .nav-two button i {
   color: #ffffff !important;
   font-size: 2rem;
@@ -763,6 +785,90 @@ a {
     height: 40px;
   }
 
+  .section-Hero {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background: radial-gradient(rgb(8, 163, 8), rgb(16, 159, 202));
+    width: 100%;
+
+    height: auto;
+    padding-bottom: 70px;
+    padding-top: 90px;
+  }
+
+  .section-Hero button {
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 9vh;
+  }
+
+  .section-Hero button a {
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 9vh;
+    position: absolute;
+  }
+
+  .section-Hero button a:hover {
+    background: white;
+    color: rgb(29, 28, 28) !important;
+    text-shadow: 1px 2px 3px rgb(36, 35, 35);
+  }
+
+  .section-Hero h1 {
+    font-size: 1.3rem !important;
+  }
+
+  .section-Hero img {
+    width: 50vw;
+    height: 65vh;
+  }
+
+  .section-Hero small {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: rgb(228, 227, 227);
+    /* margin-left: 120px; */
+  }
+
+  .section-Hero span a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: rgb(228, 227, 227) !important;
+  }
+
+  .view-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .view-div a {
+    background: rgb(224, 153, 46);
+    width: 15vw;
+    height: 7.5vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+    font-weight: 500;
+    justify-content: center;
+    color: rgb(46, 46, 46);
+    text-decoration: none;
+  }
+
   /*  */
 }
 /* 
@@ -782,38 +888,95 @@ a {
     min-height: 35px;
   }
 
+  .section-Hero {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: radial-gradient(rgb(8, 163, 8), rgb(16, 159, 202));
+    width: 100%;
+    flex-direction: column-reverse;
+    height: auto;
+    padding-bottom: 70px;
+    padding-top: 90px;
+  }
+
+  .section-Hero button {
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+  }
+
+  .section-Hero button a {
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 10vh;
+    position: absolute;
+  }
+
+  .section-Hero button a:hover {
+    background: white;
+    color: rgb(29, 28, 28) !important;
+    text-shadow: 1px 2px 3px rgb(36, 35, 35);
+  }
+
+  .section-Hero h1 {
+    font-size: 2rem !important;
+  }
+
+  .section-Hero img {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .section-Hero small {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: rgb(228, 227, 227);
+    /* margin-left: 120px; */
+  }
+
+  .section-Hero span a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: rgb(228, 227, 227) !important;
+  }
+
+  .view-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .view-div a {
+    background: rgb(224, 153, 46);
+    width: 25vw;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+    font-weight: 500;
+    justify-content: center;
+    color: rgb(46, 46, 46);
+    text-decoration: none;
+  }
+
   /*  */
 }
 
 /* /* PHONE VIEW */
 @media screen and (max-width: 576px) {
-  /* NAV 1 (top) */
-  .nav-one {
-    background: white;
-    width: 100%;
-    z-index: 1000;
-    height: 12vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative; /* nav1 scrolls away normally */
-  }
-
-  /* NAV 2 (fixed under nav1, then sticks at top) */
-  .nav-two {
-    background: #045d56;
-    display: flex;
-    justify-content: space-around; /* 👈 keeps items inside neatly */
-    align-items: center;
-    height: 14vh;
-    width: 100%;
-    position: sticky;
-    top: 12vh; /* match nav-one height */
-    left: 0;
-    z-index: 100;
-    transition: all 0.3s ease;
-  }
-
   .nav-two button i {
     color: #ffffff !important;
     font-size: 1.5rem;
@@ -872,5 +1035,99 @@ a {
     width: 90px;
     border: 3px solid white;
     height: 40px;
+  }
+
+  .section-Hero {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: radial-gradient(rgb(8, 163, 8), rgb(16, 159, 202));
+    width: 100%;
+    flex-direction: column-reverse;
+    height: auto;
+    padding-bottom: 70px;
+    padding-top: 90px;
+  }
+
+  .section-Hero button {
+    width: 42vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+  }
+
+  .section-Hero button a {
+    width: 42vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    height: 8vh;
+    position: absolute;
+  }
+
+  .section-Hero button a:hover {
+    background: white;
+    color: rgb(29, 28, 28) !important;
+    text-shadow: 1px 2px 3px rgb(36, 35, 35);
+  }
+
+  .section-Hero h1 {
+    font-size: 1.3rem !important;
+  }
+
+  .section-Hero img {
+    width: 87vw;
+    height: 40vh;
+    border-radius: 10px;
+  }
+
+  .section-Hero small {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: rgb(228, 227, 227);
+    /* margin-left: 120px; */
+  }
+
+  .section-Hero span a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: rgb(228, 227, 227) !important;
+  }
+
+  .view-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .view-div a {
+    background: rgb(224, 153, 46);
+    width: 40vw;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+    font-weight: 500;
+    justify-content: center;
+    color: rgb(46, 46, 46);
+    text-decoration: none;
+  }
+
+  .floating-car {
+    bottom: 20px; /* 👈 stick near the bottom of the image */
+    right: 50px; /* 👈 stick near the right edge */
+    background: white; /* card background */
+    border-left: 5px solid #198754; /* Green accent */
+    max-width: 250px; /* prevent it from being too wide */
+    font-size: 0.9rem;
   }
 }
