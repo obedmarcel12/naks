@@ -782,19 +782,18 @@ a {
 
 /* /* PHONE VIEW */
 @media screen and (max-width: 576px) {
-  /* NAV 1 (top) */
   .nav-one {
     background: white;
     width: 100%;
-    z-index: 1030;
+    z-index: 1000;
     height: 12vh;
     display: flex;
-    position: relative;
     justify-content: space-around;
     align-items: center;
+    position: relative; /* nav1 scrolls away normally */
   }
 
-  /* NAV 2 (always sticky after nav1) */
+  /* NAV 2 (fixed under nav1, then sticks at top) */
   .nav-two {
     background: #045d56;
     display: flex;
@@ -803,15 +802,18 @@ a {
     padding: 0 1rem;
     height: 14vh;
     width: 100%;
-    position: fixed; /* 👈 KEY */
-    top: 70px; /* sits at the very top once nav1 scrolls out */
+    position: fixed;
+    top: 12vh; /* 👈 match nav-one height */
+    left: 0;
     z-index: 100;
+    transition: all 0.3s ease;
   }
 
+  /* Style when scrolled */
   .nav-two.scrolled {
-    background-color: white !important;
-    top: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    top: 0; /* 👈 moves up when nav1 scrolls out */
+    background: white !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .nav-two button i {
