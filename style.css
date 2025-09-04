@@ -572,15 +572,15 @@ body.loaded #preloader {
 .nav-one {
   background: white;
   width: 100%;
-  z-index: 1030;
+  z-index: 1000;
   height: 12vh;
   display: flex;
-  position: relative;
   justify-content: space-around;
   align-items: center;
+  position: relative; /* nav1 scrolls away normally */
 }
 
-/* NAV 2 (always sticky after nav1) */
+/* NAV 2 (fixed under nav1, then sticks at top) */
 .nav-two {
   background: #045d56;
   display: flex;
@@ -589,9 +589,18 @@ body.loaded #preloader {
   padding: 0 1rem;
   height: 14vh;
   width: 100%;
-  position: sticky; /* 👈 KEY */
-  top: 0; /* sits at the very top once nav1 scrolls out */
+  position: fixed;
+  top: 12vh; /* 👈 match nav-one height */
+  left: 0;
   z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* Style when scrolled */
+.nav-two.scrolled {
+  top: 0; /* 👈 moves up when nav1 scrolls out */
+  background: white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Mobile accordion menu */
@@ -610,14 +619,6 @@ body.loaded #preloader {
   font-weight: 500;
   color: #cce5ff;
   /* font-size: ; */
-}
-
-/* Style when scrolled */
-.nav-two.scrolled {
-  /* height: 16vh; */
-  top: 0 !important;
-  background-color: white !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .nav-two.scrolled .nav-links a {
@@ -744,40 +745,8 @@ a {
   }
 }
 
-/* TABLET */
+/* LARGE SCREEN  */
 @media screen and (max-width: 1075px) {
-  /* NAV 1 (top) */
-  .nav-one {
-    background: white;
-    width: 100%;
-    z-index: 1030;
-    height: 12vh;
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  /* NAV 2 (always sticky after nav1) */
-  .nav-two {
-    background: #045d56;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 1rem;
-    height: 14vh;
-    width: 100%;
-    position: sticky; /* 👈 KEY */
-    top: 0; /* sits at the very top once nav1 scrolls out */
-    z-index: 100;
-  }
-
-  .nav-two.scrolled {
-    background-color: white !important;
-    top: 0 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-
   .Lounge-nav {
     text-decoration: none;
     color: #fff;
@@ -796,38 +765,6 @@ a {
 
 /* TABLET */
 @media screen and (max-width: 768px) {
-  /* NAV 1 (top) */
-  .nav-one {
-    background: white;
-    width: 100%;
-    z-index: 1030;
-    height: 12vh;
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  /* NAV 2 (always sticky after nav1) */
-  .nav-two {
-    background: #045d56;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 1rem;
-    height: 14vh;
-    width: 100%;
-    position: sticky; /* 👈 KEY */
-    top: 0; /* sits at the very top once nav1 scrolls out */
-    z-index: 100;
-  }
-
-  .nav-two.scrolled {
-    background-color: white !important;
-    top: 0 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-
   .Lounge-nav {
     text-decoration: none;
     color: #fff;
@@ -866,14 +803,14 @@ a {
     padding: 0 1rem;
     height: 14vh;
     width: 100%;
-    position: sticky; /* 👈 KEY */
-    top: 0; /* sits at the very top once nav1 scrolls out */
+    position: fixed; /* 👈 KEY */
+    top: 70px; /* sits at the very top once nav1 scrolls out */
     z-index: 100;
   }
 
   .nav-two.scrolled {
     background-color: white !important;
-    top: 0 !important;
+    top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 
