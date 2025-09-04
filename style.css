@@ -568,29 +568,37 @@ body.loaded #preloader {
 
 /* END OF CSS */
 
-/* NAV 1 (top, normal flow) */
+/* NAV 1 (top) */
 .nav-one {
   background: white;
   width: 100%;
   z-index: 1030;
   height: 12vh;
-  position: relative; /* stays in normal flow */
   display: flex;
+
   justify-content: space-around;
   align-items: center;
 }
 
-/* NAV 2 (fixed, just below nav1) */
+/* NAV 2 (always sticky after nav1) */
 .nav-two {
+  background: #045d56;
   display: flex;
   justify-content: space-around;
-  background: #045d56;
   align-items: center;
-  width: 100%;
-  position: sticky;
-  top: 0; /* 👈 matches nav1 height */
-  z-index: 1050;
+  padding: 0 1rem;
   height: 14vh;
+  width: 100%;
+  position: sticky; /* 👈 KEY */
+  top: 0; /* sits at the very top once nav1 scrolls out */
+  z-index: 1050;
+}
+
+/* Mobile accordion menu */
+#mobileMenu {
+  background: #f8f9fa;
+  position: relative;
+  z-index: 1040;
 }
 
 .nav-two button {
