@@ -615,6 +615,7 @@ body.loaded #preloader {
 /* Style when scrolled */
 .nav-two.scrolled {
   /* height: 16vh; */
+  top: 0 !important;
   background-color: white !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
@@ -771,6 +772,12 @@ a {
     z-index: 100;
   }
 
+  .nav-two.scrolled {
+    background-color: white !important;
+    top: 0 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
   .Lounge-nav {
     text-decoration: none;
     color: #fff;
@@ -813,6 +820,12 @@ a {
     position: sticky; /* 👈 KEY */
     top: 0; /* sits at the very top once nav1 scrolls out */
     z-index: 100;
+  }
+
+  .nav-two.scrolled {
+    background-color: white !important;
+    top: 0 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 
   .Lounge-nav {
@@ -860,7 +873,7 @@ a {
 
   .nav-two.scrolled {
     background-color: white !important;
-    padding-top: 14px !important;
+    top: 0 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 
