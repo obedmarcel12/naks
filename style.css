@@ -1,18 +1,67 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial !important;
-  overflow-x: hidden !important;
-  overflow-y: auto !important; /* keep vertical scrolling normal */
 }
+
+/* ===== 0) REMOVE THESE IF YOU HAVE THEM ===== */
+/* html { overflow: scroll !important; }     <-- delete
+   html { overflow: hidden !important; }     <-- delete
+   body { overflow: hidden !important; }     <-- delete */
+
+/* ===== 1) GLOBAL SCROLL/OVERFLOW ===== */
+html {
+  height: 100%;
+} /* keep default viewport scrolling */
+body {
+  margin: 0;
+  overflow-x: hidden; /* stop sideways scroll */
+  overflow-y: auto; /* keep normal vertical scroll */
+}
+
+/* Important: fixed breaks if an ancestor is transformed on iOS */
+header,
+.nav-two-parent {
+  transform: none !important;
+  filter: none !important;
+  perspective: none !important;
+  backdrop-filter: none !important;
+}
+
+/* ===== 2) HORIZONTAL-OVERFLOW GUARDS ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Bootstrap rows can overflow if not inside a padded container */
+.container,
+.container-fluid {
+  max-width: 100%;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Any section that ever overflowed (like your EVENTS section) */
+.function-hub-section {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Absolutely-positioned split toggles — keep them tame on phones */
 
 /* Loader background */
 #preloader {
@@ -192,13 +241,16 @@ body.loaded #preloader {
   box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
 
   transition: transform 0.3s ease;
+
+  /* 👇 keeps rotated element inside */
+  transform-origin: center;
+  overflow: hidden;
 }
 
 .booking-btn:hover {
-  transform: scale(1.1); /* little zoom on hover */
+  transform: scale(1.1);
 }
 
-/* Background shimmer */
 @keyframes bgMove {
   0% {
     background-position: 0% 50%;
@@ -211,7 +263,6 @@ body.loaded #preloader {
   }
 }
 
-/* Rotation */
 @keyframes rotate-btn {
   0% {
     transform: rotate(0deg);
@@ -353,8 +404,8 @@ body.loaded #preloader {
   background: white;
   padding: 80px 20px;
   position: relative;
-  overflow-x: hidden; /* 👈 prevent horizontal overflow */
-  overflow-y: visible; /* keep vertical scrolling */
+  overflow-x: hidden !important; /* 👈 prevent horizontal overflow */
+  overflow-y: visible !important; /* keep vertical scrolling */
 }
 
 /* Fix Bootstrap row negative margins */
@@ -590,38 +641,34 @@ body.loaded #preloader {
 }
 
 /* END OF CSS */
+/* NAV 1 */
 
-/* NAV 1 (top) */
 .nav-one {
   background: white;
   width: 100%;
-  z-index: 1000;
   height: 12vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative; /* nav1 scrolls away normally */
+  z-index: 1030;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* NAV 2 (fixed under nav1, then sticks at top) */
+/* NAV 2 (fixed below nav1, sticks after scroll) */
 .nav-two {
   background: #045d56;
   display: flex;
-  justify-content: space-around; /* 👈 keeps items inside neatly */
+  justify-content: space-around; /* keeps logo left, menu icon right */
   align-items: center;
   height: 14vh;
   width: 100%;
-  position: sticky;
-  top: 12vh; /* match nav-one height */
-  left: 0;
   z-index: 100;
-  transition: all 0.3s ease;
 }
 
-/* Style when scrolled */
+/* When scrolled: nav2 slides to the very top & can change style */
 .nav-two.scrolled {
-  top: 0 !important;
-  background: white !important;
+  top: 0;
+  background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -759,6 +806,10 @@ a {
 
 /* LARGE SCREEN  */
 @media screen and (max-width: 1075px) {
+  html,body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .nav-two ul a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
@@ -869,6 +920,38 @@ a {
     text-decoration: none;
   }
 
+  .booking-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 150px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #031110 !important;
+    text-shadow: 1px 3px rgb(48, 49, 48);
+    text-decoration: none;
+    z-index: 2000;
+
+    /* Nigerian green-white gradient */
+    background: linear-gradient(135deg, #045d56, #ffffff, #228b22);
+    background-size: 200% 200%;
+    animation: bgMove 6s ease infinite, rotate-btn 6s linear infinite;
+
+    /* Glow effect */
+    box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
+
+    transition: transform 0.3s ease;
+
+    /* 👇 keeps rotated element inside */
+    transform-origin: center;
+    overflow-x: hidden;
+  }
+
   /*  */
 }
 /* 
@@ -970,6 +1053,12 @@ a {
     justify-content: center;
     color: rgb(46, 46, 46);
     text-decoration: none;
+  }
+
+  .dropdown-toggle-split {
+    position: static !important;
+    margin-left: auto;
+    padding: 0;
   }
 
   /*  */
