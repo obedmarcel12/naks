@@ -806,7 +806,8 @@ a {
 
 /* LARGE SCREEN  */
 @media screen and (max-width: 1075px) {
-  html,body {
+  html,
+  body {
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -923,7 +924,7 @@ a {
   .booking-btn {
     position: fixed;
     bottom: 20px;
-    right: 150px;
+    right: 40px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -1061,6 +1062,38 @@ a {
     padding: 0;
   }
 
+  .booking-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 8px;
+    color: #031110 !important;
+    text-shadow: 1px 3px rgb(48, 49, 48);
+    text-decoration: none;
+    z-index: 2000;
+
+    /* Nigerian green-white gradient */
+    background: linear-gradient(135deg, #045d56, #ffffff, #228b22);
+    background-size: 200% 200%;
+    animation: bgMove 6s ease infinite, rotate-btn 6s linear infinite;
+
+    /* Glow effect */
+    box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
+
+    transition: transform 0.3s ease;
+
+    /* 👇 keeps rotated element inside */
+    transform-origin: center;
+    overflow-x: hidden;
+  }
+
   /*  */
 }
 
@@ -1124,6 +1157,12 @@ a {
     width: 90px;
     border: 3px solid white;
     height: 40px;
+  }
+  .img-card {
+    object-fit: cover;
+    width: 100%;
+    height: 300px; /* Adjust height based on your layout */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Optional: clean shadow */
   }
 
   .section-Hero {
@@ -1218,5 +1257,37 @@ a {
     border-left: 5px solid #198754; /* Green accent */
     max-width: 250px; /* prevent it from being too wide */
     font-size: 0.9rem;
+  }
+
+  .booking-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 8px;
+    color: #031110 !important;
+    text-shadow: 1px 3px rgb(48, 49, 48);
+    text-decoration: none;
+    z-index: 2000;
+
+    /* Nigerian green-white gradient */
+    background: linear-gradient(135deg, #045d56, #ffffff, #228b22);
+    background-size: 200% 200%;
+    animation: bgMove 6s ease infinite, rotate-btn 6s linear infinite;
+
+    /* Glow effect */
+    box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
+
+    transition: transform 0.3s ease;
+
+    /* 👇 keeps rotated element inside */
+    transform-origin: center;
+    overflow-x: hidden;
   }
 }
