@@ -16,316 +16,287 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
+    <link rel="stylesheet" href="contact.css" />
+
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
-          'Helvetica Neue', Arial !important;
-      }
-
-      .color-code {
-        background: #045d56;
-        color: white;
-      }
-
-      .sticky-top {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        z-index: 100; /* Keep it above other content */
-      }
-
-      .toggle-index {
-        z-index: 999 !important;
-      }
-
-      .Logo-Img {
-        width: 120px;
-        height: 50px;
-      }
-
-      .Naks-nav {
-        font-size: 15px;
-        font-weight: 500;
-        font-family: sans-serif !important;
-        color: #29532b !important;
-      }
-
-      .Lounge-nav {
-        font-size: 15px;
-        font-weight: 500;
-        font-family: sans-serif !important;
-        background: #045d56;
-        width: 15vw;
-        height: 6vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white !important;
-        margin-right: 20px !important;
-      }
-
-      /* Default navbar style */
-      .nav-two {
-        background-color: #198754; /* Bootstrap green (success) */
-        transition: all 0.3s ease-in-out;
-      }
-
-      .nav-two .nav-link {
-        color: white !important;
-        transition: color 0.3s ease-in-out;
-      }
-
-      /* Style when scrolled */
-      .nav-two.scrolled {
-        background-color: white !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      }
-
-      .nav-two.scrolled .nav-link {
-        color: black !important;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-      }
-
-      .nav-two.scrolled .dropdown-menu {
-        background-color: white;
-      }
-
-      .nav-two.scrolled .dropdown-item {
-        color: black !important;
-      }
-
-      .contact-hero {
-        height: 40vh;
-        background: url('src/contact\ us.avif') center/cover no-repeat;
-        position: relative;
-      }
-
-      .contact-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9); /* dark overlay for text contrast */
-      }
-
-      .Contact-US-sEc {
-        background: #045d56;
-        width: 100%;
-        height: 35vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        gap: 4vh;
-      }
-
-      .Contact-US-sEc span {
-        font-size: x-large;
-        font-family: serif;
-      }
-
-      .contact-hero .text-center {
-        position: relative;
-        z-index: 999;
-      }
-
-      .eatery-subtitle {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-          sans-serif;
-        font-weight: bold;
-        text-shadow: 1px 1px 3px rgba(20, 20, 20, 0.8);
-        letter-spacing: 1px;
-      }
-
-      .footer-section {
-        background: #031110;
-      }
-
-      .footer-link {
-        color: #facc15; /* light yellow */
-        text-decoration: none;
-        transition: 0.3s;
-      }
-
-      .footer-link:hover {
-        color: white;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      @media screen and (min-width: 768px) {
+        #mobileMenu {
+          display: none !important;
+        }
       }
     </style>
   </head>
   <body>
     <!-- nav-1 -->
-    <nav
-      id="index"
-      class="navbar d-flex align-items-center justify-content-around"
-    >
-      <div class="navbar nav toggle-index">
-        <li class="nav-item dropdown">
+    <nav class="nav-one bg-white">
+      <div class="right-nav">
+        <li class="dropdown">
+          <a href="#" class="dropbtn">NAKS HOTEL</a>
+          <ul class="dropdown-menu">
+            <li><a href="SERVICES/rooms.html">OUR ROOMS</a></li>
+          </ul>
+        </li>
+      </div>
+
+      <div class="right-nav">
+        <li class="dropdown">
+          <a href="#" class="Lounge-nav">LOUNGE OUTLET</a>
+          <ul class="dropdown-menu">
+            <li><a href="BARS/vip.html">VIP BAR</a></li>
+            <li><a href="BARS/restaurant.html">RESTAURANT</a></li>
+            <li><a href="BARS/rendezvousbar.html">RENDEZVOUS BAR</a></li>
+            <li><a href="BARS/poolbar.html">POOL BAR</a></li>
+            <li><a href="BARS/nightclub.html">NIGHT CLUB</a></li>
+          </ul>
+        </li>
+        <span class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+        </span>
+      </div>
+    </nav>
+
+    <!-- END OF NAV1 -->
+
+    <!-- SECOND NAVBAR -->
+    <nav class="nav-two sticky-top shadow">
+      <!-- Logo -->
+      <a href="index.html">
+        <img src="Src/Naks logo.jpg" class="Logo-Img" alt="Logo" />
+      </a>
+
+      <!-- Menu Icon (Mobile only) -->
+      <button
+        class="btn d-md-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mobileMenu"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Desktop Nav Items -->
+      <ul class="nav-links d-none d-md-flex align-items-center m-0 p-0 gap-4">
+        <!-- <li class="list-unstyled">
+          <a class="" href="index.html">Home</a>
+        </li> -->
+
+        <!-- HOME -->
+        <li class="list-unstyled">
+          <a class="" href="index.html">HOME</a>
+        </li>
+
+        <!--  -->
+
+        <li class="list-unstyled">
+          <a class="" href="SERVICES/eatry.html">EATERY</a>
+        </li>
+
+        <!--  -->
+
+        <li class="list-unstyled">
+          <a class="" href="SERVICES/gallery.html">GALLERY</a>
+        </li>
+
+        <li class="dropdown list-unstyled position-relative">
+          <!-- Main link to Services page -->
+          <a class="" href="#">FUNCTION HUBS</a>
+
+          <!-- Separate dropdown toggle -->
           <a
-            class="nav-link dropdown-toggle Naks-nav"
+            class="dropdown-toggle-split"
             href="#"
-            id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            style="
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%;
+              padding: 0 10px;
+            "
           >
-            NAKS HOTEL
+            <span class="visually-hidden">Toggle Dropdown</span>
           </a>
-          <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdown">
-            <li>
-              <a class="dropdown-item" href="./SERVICES/rooms.html"
-                >OUR ROOMS</a
+
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu">
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="SERVICES/events.html"
+                >CAPITAL BAR</a
+              >
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="SERVICES/events.html"
+                >KAMSI POOL BAR</a
+              >
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="SERVICES/events.html"
+                >VICTORY HALL</a
+              >
+            </li>
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="SERVICES/events.html"
+                >CLUB HOUSE</a
               >
             </li>
           </ul>
         </li>
-      </div>
-      <!--  -->
 
-      <div class="navbar nav z-index">
-        <li class="nav-item dropdown">
+        <!--  -->
+
+        <li class="dropdown list-unstyled position-relative">
+          <!-- Main link to Services page -->
+          <a class="" href="#">LEISURE ZONE</a>
+
+          <!-- Separate dropdown toggle -->
           <a
-            class="nav-link dropdown-toggle Lounge-nav"
+            class="dropdown-toggle-split"
             href="#"
-            id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            style="
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%;
+              padding: 0 10px;
+            "
           >
-            LOUNGE OUTLET
+            <span class="visually-hidden">Toggle Dropdown</span>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./BARS/vip.html">VIP BAR</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="./BARS/restaurant.html"
-                >RESTAURANT</a
+
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu">
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="LEISURE-ZONE/swimming.html"
+                >SWIMMING POOL</a
               >
             </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="./BARS/rendezvousbar.html"
-                >RENDEZVOUS BAR</a
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="LEISURE-ZONE/gymnasium.html"
+                >GYM</a
               >
             </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="./BARS/poolbar.html">POOL BAR</a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="./BARS/nightclub.html"
-                >NIGHT CLUB</a
+            <li class="list-unstyled">
+              <a class="dropdown-item" href="LEISURE-ZONE/squash.html"
+                >SQUASH</a
               >
             </li>
           </ul>
         </li>
         <!--  -->
-        <ul class="navbar nav d-flex gap-3">
-          <a href=""><i class="bi bi-facebook text-success"></i></a>
-          <a href=""><i class="bi-instagram text-success"></i></a>
-          <a href=""><i class="bi-twitter text-success"></i></a>
-        </ul>
-      </div>
+      </ul>
     </nav>
 
-    <!-- nav-2 -->
-    <nav
-      class="navbar nav-two navbar-expand-lg navbar-light sticky-top px-5 py-3"
-    >
-      <div class="container-fluid d-flex align-items-center justify-around">
-        <!-- Logo on the left -->
-        <a class="img-fluid" href="index.html">
-          <img class="Logo-Img" src="Src/Naks logo.jpg" alt="" />
-        </a>
+    <li class="nav-item ms-auto list-unstyled">
+      <!-- Floating Booking Button -->
+      <a href="SERVICES/rooms.html" class="booking-btn"> Book Now</a>
+    </li>
 
-        <!-- Nav Links -->
-        <div class="d-flex mx-auto">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-white"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                HOME
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="./SERVICES/eatry.html"
-                >EATERY</a
-              >
-            </li>
-
-            <li class="nav-item d-flex">
-              <a class="nav-link text-white" href="./SERVICES/gallery.html"
-                >GALLERY</a
-              >
-            </li>
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-white"
-                href="#"
-                id="navbarDropdown2"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                FUNCTION HUB
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <li><a class="dropdown-item" href="#">CAPITAL BAR </a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">KAMSI POOL BAR</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">VICTORY HALL</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">CLUB HOUSE</a></li>
-              </ul>
-            </li>
-          </ul>
+    <!-- Mobile Accordion Menu -->
+    <div class="collapse d-md-none" id="mobileMenu">
+      <div class="accordion" id="navAccordion">
+        <!-- HOME -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <a href="index.html" class="accordion-link">HOME</a>
+          </h2>
         </div>
 
-        <!-- Search on the right -->
-        <li class="nav-item dropdown list-unstyled">
-          <a
-            class="nav-link dropdown-toggle text-white"
-            href="#"
-            id="navbarDropdown2"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            LEISURE ZONE
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <li><a class="dropdown-item" href="#">SWIMMING POOL</a></li>
-            <li><hr class="dropdown-divider" /></li>
+        <!-- EATERY -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <a href="SERVICES/eatry.html" class="accordion-link">EATERY</a>
+          </h2>
+        </div>
 
-            <li><a class="dropdown-item" href="#">GYM</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">SQUASH</a></li>
-          </ul>
-        </li>
+        <!-- GALLERY -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <a href="SERVICES/gallery.html" class="accordion-link">GALLERY</a>
+          </h2>
+        </div>
+
+        <!-- FUNCTION HUB -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#FunctionCollapse"
+            >
+              FUNCTION HUB
+            </button>
+          </h2>
+          <div
+            id="FunctionCollapse"
+            class="accordion-collapse collapse"
+            data-bs-parent="#navAccordion"
+          >
+            <div class="accordion-body">
+              <a href="SERVICES/events.html" class="d-block mb-1"
+                >CAPITAL BAR</a
+              >
+            </div>
+            <div class="accordion-body">
+              <a href="SERVICES/events.html" class="d-block mb-1"
+                >KAMSI POOL BAR</a
+              >
+            </div>
+            <div class="accordion-body">
+              <a href="SERVICES/events.html" class="d-block mb-1"
+                >VICTORY HALL</a
+              >
+            </div>
+            <div class="accordion-body">
+              <a href="SERVICES/events.html" class="d-block mb-1">CLUB HOUSE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEISURE ZONE -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#leisureCollapse"
+            >
+              LEISURE ZONE
+            </button>
+          </h2>
+          <div
+            id="leisureCollapse"
+            class="accordion-collapse collapse"
+            data-bs-parent="#navAccordion"
+          >
+            <div class="accordion-body">
+              <a href="LEISURE-ZONE/swimming.html" class="d-block mb-1"
+                >SWIMMING POOL</a
+              >
+            </div>
+            <div class="accordion-body">
+              <a href="LEISURE-ZONE/gymnasium.html" class="d-block mb-1">GYM</a>
+            </div>
+            <div class="accordion-body">
+              <a href="LEISURE-ZONE/squash.html" class="d-block mb-1"
+                >SQUASH GAME</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
+    </div>
 
     <!-- Contact Hero Section -->
     <section
@@ -359,7 +330,8 @@
               Cross River State, Nigeria
             </p>
             <p>
-              <i class="bi bi-telephone-fill contact-code"></i> +2348109014512
+              <i class="bi bi-telephone-fill contact-code"></i> +234 810 901
+              4512
             </p>
             <p>
               <i class="bi bi-envelope-fill contact-code"></i>
@@ -392,7 +364,6 @@
                     type="text"
                     name="name"
                     class="form-control"
-                    placeholder="John Doe"
                     required
                   />
                 </div>
@@ -402,7 +373,6 @@
                     type="email"
                     name="email"
                     class="form-control"
-                    placeholder="you@example.com"
                     required
                   />
                 </div>
@@ -412,7 +382,6 @@
                     type="tel"
                     name="phone"
                     class="form-control"
-                    placeholder="+1234567890"
                     required
                   />
                 </div>
@@ -422,7 +391,6 @@
                     type="text"
                     name="subject"
                     class="form-control"
-                    placeholder="Booking Inquiry"
                     required
                   />
                 </div>
