@@ -370,9 +370,7 @@ body.loaded #preloader {
   visibility: hidden;
   transition: all 0.6s ease;
 }
-header {
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
-}
+
 .venue-section {
   padding: 80px 0;
 }
