@@ -1,0 +1,40 @@
+header {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.room-card img {
+  height: 250px;
+  object-fit: cover;
+}
+.Logo-Img {
+  width: 120px;
+  height: 50px;
+}
+
+.eatery-subtitle {
+  color: #252525; /* Gold tone */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(65, 64, 64, 0.8);
+  letter-spacing: 1px;
+}
+
+.button-code {
+  background: #031110;
+  color: white;
+}
+
+.footer-section {
+  background: #031110;
+}
+
+.footer-link {
+  color: #facc15; /* light yellow */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
