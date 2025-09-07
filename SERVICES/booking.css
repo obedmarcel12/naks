@@ -38,3 +38,13 @@ header {
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
+@media screen and (max-width: 586px) {
+  .eatery-subtitle {
+   font-size: medium;
+    color: #252525; /* Gold tone */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(65, 64, 64, 0.8);
+    letter-spacing: 1px;
+  }
+}
