@@ -509,4 +509,13 @@ a {
     transform-origin: center;
     overflow-x: hidden;
   }
+
+  .hero-content h1 {
+  font-size: 1.6em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+}
+.hero-content p {
+  font-size: 0.9rem;
+}
 }
