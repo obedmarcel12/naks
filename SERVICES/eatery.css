@@ -370,7 +370,7 @@ a {
 /* Page header / hero */
 .eatery-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url('../src/restauarant\ main2.jpg');
+    url('../Src/restauarant\ main2.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
