@@ -1,0 +1,736 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brand-green: #0b6b3a;
+  --brand-gold: #d4af37;
+  --warm-bg: #ffedd5; /* soft peach for accents */
+  --dark: #0a0f2c;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial;
+  background: #fffaf6;
+  color: #1e293b;
+}
+
+.nav-one {
+  background: white;
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1030;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* NAV 2 (fixed below nav1, sticks after scroll) */
+.nav-two {
+  background: #045d56;
+  display: flex;
+  justify-content: space-around; /* keeps logo left, menu icon right */
+  align-items: center;
+  height: 14vh;
+  width: 100%;
+  z-index: 100;
+}
+
+/* When scrolled: nav2 slides to the very top & can change style */
+.nav-two.scrolled {
+  top: 0;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile accordion menu */
+#mobileMenu {
+  background: #f8f9fa;
+  position: relative;
+  z-index: 1040;
+}
+
+.nav-two ul a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: #cce5ff;
+  /* font-size: ; */
+}
+
+.nav-two.scrolled .nav-links a {
+  color: rgb(78, 78, 78) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.nav-two.scrolled .booking-btn {
+  color: #031110 !important;
+  text-shadow: 1px 3px rgb(48, 49, 48) !important;
+}
+
+.hover-span .hover {
+  text-decoration: none;
+}
+
+.hover-span .hover:hover {
+  text-decoration: underline;
+}
+
+.nav-two .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  z-index: 100;
+}
+
+.dropdown .dropdown-menu a:hover {
+  background: #f8fdf9;
+  color: green !important;
+  border-left: 3px solid green;
+  padding-left: 1.2rem;
+}
+
+.nav-two .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333 !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.accordion-link {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #001f3f; /* Bootstrap primary color */
+  background-color: #f0f8ff; /* same as accordion background */
+  text-align: left;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+.accordion-link:hover {
+  background-color: #cce5ff; /* Bootstrap hover bg */
+  color: #001f3f;
+}
+
+.accordion-button {
+  background-color: #f0f8ff;
+  color: #001f3f;
+  font-weight: 500;
+  /* border-bottom: 1px solid #007bff; */
+  transition: background 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #007bff;
+  color: #001f3f;
+}
+
+.accordion-button:hover {
+  background-color: #cce5ff;
+}
+
+.accordion-body {
+  background: white !important;
+  border: 1px solid rgb(194, 238, 241) !important;
+}
+
+.accordion-body a {
+  color: #001f3f;
+  font-weight: 500;
+}
+
+.accordion-body a:hover {
+  text-decoration: underline;
+}
+
+.Logo-Img {
+  width: 120px;
+  border: 3px solid white;
+  height: 50px;
+}
+
+/* Dropdown inside nav 1 */
+.nav-one .dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.right-nav .dropbtn {
+  text-decoration: none;
+  color: #166b30;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  left: 0;
+  transition: color 0.2s ease;
+}
+
+.nav-one .dropbtn:hover {
+  color: green; /* highlight brand color */
+}
+
+.nav-one .dropdown-menu a {
+  color: #333;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nav-one .dropdown-menu a:hover {
+  background: #f8fdf9;
+  color: green !important;
+  border-left: 3px solid green;
+  padding-left: 1.2rem;
+}
+
+/* RIGHT NAV WRAPPER */
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Lounge Outlet link */
+
+.Lounge-nav {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #045d56;
+  width: 15vw;
+  height: 6vh;
+  font-weight: 600;
+}
+
+.right-nav .Lounge-nav:hover {
+  background: #f8fdf9;
+  color: green;
+}
+
+/* Dropdown menu */
+.right-nav .dropdown {
+  position: relative;
+  z-index: 100000;
+}
+
+.right-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  min-width: 170px;
+}
+
+.right-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.right-nav .dropdown-menu li {
+  list-style: none;
+}
+
+.right-nav .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-decoration: none;
+
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.right-nav .dropdown-menu a:hover {
+  background: #f4fff6;
+  color: green;
+  border-left: 3px solid green;
+  padding-left: 1.2rem;
+}
+
+/* Social icons */
+.right-nav .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.right-nav .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f8fdf9;
+  color: rgb(50, 77, 50);
+  font-size: 1rem;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.right-nav .social-icons a:hover {
+  background: green;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.nav-two button i {
+  color: #ffffff !important;
+  font-size: 2rem;
+}
+
+.nav-two.scrolled button i {
+  color: #2b2a2a !important;
+}
+
+.nav-two.scrolled .Logo-Img {
+  width: 130px;
+  height: 45px;
+}
+
+.booking-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #031110 !important;
+  text-shadow: 1px 3px rgb(48, 49, 48);
+  text-decoration: none;
+  z-index: 2000;
+
+  /* Nigerian green-white gradient */
+  background: linear-gradient(135deg, #045d56, #ffffff, #228b22);
+  background-size: 200% 200%;
+  animation: bgMove 6s ease infinite, rotate-btn 6s linear infinite;
+
+  /* Glow effect */
+  box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
+
+  transition: transform 0.3s ease;
+
+  /* 👇 keeps rotated element inside */
+  transform-origin: center;
+  overflow: hidden;
+}
+
+.booking-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes rotate-btn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Page header / hero */
+.eatery-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('../src/restauarant\ main2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 0;
+  position: relative;
+}
+.eatery-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+}
+.eatery-hero .hero-inner {
+  position: relative;
+  z-index: 2;
+}
+.eatery-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+.eatery-hero p.lead {
+  color: #fff7ea;
+  max-width: 760px;
+  margin: 0 auto 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.btn-accent {
+  background: linear-gradient(90deg, var(--brand-green), #0f8a51);
+  border: none;
+  color: #fff;
+  padding: 0.65rem 1.2rem;
+  border-radius: 0.35rem;
+  box-shadow: 0 10px 30px rgba(11, 107, 58, 0.18);
+}
+
+/* Staggered cards layout */
+.bars-grid {
+  max-width: 1100px;
+  margin: 60px auto;
+}
+.bar-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.bar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+}
+.bar-image {
+  position: relative;
+  overflow: hidden;
+}
+.bar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.bar-card:hover .bar-image img {
+  transform: scale(1.06);
+}
+.bar-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.bar-sub {
+  color: #6b7280;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.bar-actions {
+  margin-top: auto;
+}
+.btn-outline-brand {
+  border: 2px solid var(--brand-green);
+  color: var(--brand-green);
+  background: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-outline-brand:hover {
+  background: var(--brand-green);
+  color: #fff;
+  border-color: var(--brand-green);
+}
+
+/* Alternate layout: flip image / text */
+.bar-card.alt {
+  grid-template-columns: 1fr 1fr;
+}
+.bar-card.alt .bar-image {
+  order: 2;
+}
+.bar-card.alt .bar-body {
+  order: 1;
+  text-align: right;
+}
+.bar-card.alt .bar-title {
+  text-align: right;
+}
+.bar-card.alt .bar-sub {
+  text-align: right;
+}
+
+/* Small screens: stack vertically */
+@media (max-width: 992px) {
+  .bar-card,
+  .bar-card.alt {
+    grid-template-columns: 1fr;
+  }
+  .bar-card.alt .bar-body {
+    text-align: left;
+    order: 2;
+  }
+  .bar-card.alt .bar-image {
+    order: 1;
+  }
+}
+
+/* spacing between cards */
+.bars-grid .mb-4 {
+  margin-bottom: 28px;
+}
+
+/* small tag */
+.bar-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 30px;
+  background: rgba(11, 107, 58, 0.08);
+  color: var(--brand-green);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* subtle reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-section {
+  background: #031110;
+}
+
+.footer-link {
+  color: #facc15; /* light yellow */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* LARGE SCREEN  */
+@media screen and (max-width: 1075px) {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .nav-two ul a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: smaller;
+    color: #cce5ff;
+    /* font-size: ; */
+  }
+
+  .Lounge-nav {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #045d56;
+    font-size: 0.8rem;
+    min-width: 125px;
+    min-height: 35px;
+  }
+
+  .Logo-Img {
+    width: 115px;
+    border: 3px solid white;
+    height: 40px;
+  }
+}
+
+/* TABLET */
+@media screen and (max-width: 768px) {
+  .Lounge-nav {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #045d56;
+    font-size: 0.8rem;
+    min-width: 125px;
+    min-height: 35px;
+  }
+
+  .dropdown-toggle-split {
+    position: static !important;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .booking-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 8px;
+    color: #031110 !important;
+    text-shadow: 1px 3px rgb(48, 49, 48);
+    text-decoration: none;
+    z-index: 2000;
+
+    /* Nigerian green-white gradient */
+    background: linear-gradient(135deg, #045d56, #ffffff, #228b22);
+    background-size: 200% 200%;
+    animation: bgMove 6s ease infinite, rotate-btn 6s linear infinite;
+
+    /* Glow effect */
+    box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
+
+    transition: transform 0.3s ease;
+
+    /* 👇 keeps rotated element inside */
+    transform-origin: center;
+    overflow-x: hidden;
+  }
+}
+
+/* /* PHONE VIEW */
+@media screen and (max-width: 576px) {
+  .nav-two button i {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+  }
+  .nav-one .dropbtn {
+    text-decoration: none;
+    color: #166b30;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    /* padding: 0.5rem 0.8rem; */
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .right-nav .Lounge-nav {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #045d56;
+    font-size: 0.7rem;
+    height: 4vh;
+    min-width: 120px;
+    min-height: 30px;
+  }
+
+  /* Social icons */
+  .social-icons {
+    display: none !important;
+  }
+
+  .right-nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    min-width: 135px;
+  }
+
+  .right-nav .dropdown-menu a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.6rem;
+    transition: all 0.2s ease;
+  }
+
+  .Logo-Img {
+    width: 90px;
+    border: 3px solid white;
+    height: 40px;
+  }
+
+  .booking-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 8px;
+    color: #031110 !important;
+    text-shadow: 1px 3px rgb(48, 49, 48);
+    text-decoration: none;
+    z-index: 2000;
+
+    /* Nigerian green-white gradient */
+    background: linear-gradient(135deg, #045d56, #ffffff, #228b22);
+    background-size: 200% 200%;
+    animation: bgMove 6s ease infinite, rotate-btn 6s linear infinite;
+
+    /* Glow effect */
+    box-shadow: 0 0 15px rgba(4, 93, 86, 0.8), 0 0 30px rgba(34, 139, 34, 0.6);
+
+    transition: transform 0.3s ease;
+
+    /* 👇 keeps rotated element inside */
+    transform-origin: center;
+    overflow-x: hidden;
+  }
+}
