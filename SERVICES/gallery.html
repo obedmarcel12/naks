@@ -30,6 +30,7 @@
   </head>
 
   <body>
+    <div id="preloader"></div>
     <!-- nav-1 -->
     <nav class="nav-one bg-white">
       <div class="right-nav">
@@ -436,7 +437,8 @@
               Cross River State, Nigeria
             </p>
             <p>
-              <i class="bi bi-telephone-fill text-warning"></i> +2349052207771
+              <i class="bi bi-telephone-fill text-warning"></i> +234 810 901
+              4512
             </p>
             <p>
               <i class="bi bi-envelope-fill text-warning"></i>
@@ -465,6 +467,12 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded')
+      })
+    </script>
 
     <script>
       window.addEventListener('scroll', function () {

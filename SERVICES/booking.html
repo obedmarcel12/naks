@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../SERVICES/booking.css" />
   </head>
   <body>
+    <div id="preloader"></div>
     <!-- Booking Page Header -->
     <header class="py-3 bg-light sticky-top">
       <div class="container d-flex justify-content-between align-items-center">
@@ -137,7 +138,7 @@
       <!-- Booking Form -->
       <div class="card p-4 shadow-lg">
         <h3 class="mb-4 eatery-subtitle">Complete Your Booking</h3>
-        <form action="process_booking.php" method="POST">
+        <form action="booking.php" method="POST">
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Full Name</label>
@@ -261,7 +262,8 @@
               Cross River State, Nigeria
             </p>
             <p>
-              <i class="bi bi-telephone-fill text-warning"></i> +2348039243902
+              <i class="bi bi-telephone-fill text-warning"></i> +234 810 901
+              4512
             </p>
             <p>
               <i class="bi bi-envelope-fill text-warning"></i>
@@ -299,6 +301,12 @@
         } else {
           navbar.classList.remove('scrolled')
         }
+      })
+    </script>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded')
       })
     </script>
   </body>

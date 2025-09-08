@@ -19,6 +19,25 @@
         color: white;
       }
 
+      /* Loader background */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff url('https://i.gifer.com/YCZH.gif') no-repeat center
+          center;
+        z-index: 9999;
+      }
+
+      /* Hide loader after load */
+      body.loaded #preloader {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.6s ease;
+      }
+
       header {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
         color: white;
@@ -121,6 +140,7 @@
     </style>
   </head>
   <body id="home">
+    <div id="preloader"></div>
     <header class="py-3 bg-light sticky-top">
       <div class="container d-flex justify-content-between align-items-center">
         <a href="../index.html"
@@ -312,7 +332,8 @@
               Cross River State, Nigeria
             </p>
             <p>
-              <i class="bi bi-telephone-fill text-warning"></i> +2348039243902
+              <i class="bi bi-telephone-fill text-warning"></i> +234 810 901
+              4512
             </p>
             <p>
               <i class="bi bi-envelope-fill text-warning"></i>
@@ -341,6 +362,12 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded')
+      })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

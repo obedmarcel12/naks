@@ -3,6 +3,24 @@
   padding: 0;
 }
 
+/* Loader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff url('https://i.gifer.com/YCZH.gif') no-repeat center center;
+  z-index: 9999;
+}
+
+/* Hide loader after load */
+body.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease;
+}
+
 .nav-one {
   background: white;
   width: 100%;
@@ -763,7 +781,8 @@ a {
   }
 
   .containt-div p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
     font-weight: 500;
     font-size: 10.3px;
     color: #333;

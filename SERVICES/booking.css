@@ -3,6 +3,24 @@ header {
   color: white;
 }
 
+/* Loader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff url('https://i.gifer.com/YCZH.gif') no-repeat center center;
+  z-index: 9999;
+}
+
+/* Hide loader after load */
+body.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease;
+}
+
 .room-card img {
   height: 250px;
   object-fit: cover;
@@ -41,7 +59,7 @@ header {
 
 @media screen and (max-width: 586px) {
   .eatery-subtitle {
-   font-size: medium;
+    font-size: medium;
     color: #252525; /* Gold tone */
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(65, 64, 64, 0.8);
