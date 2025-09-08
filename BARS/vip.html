@@ -8,6 +8,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!--  -->
+    <link rel="shortcut icon" href="../Src/Naks logo.jpg" />
     <style>
       :root {
         --hotel-green: #0b6623;
@@ -29,7 +32,7 @@
       }
       .hero-section {
         height: 40vh;
-        background: url('../src/vip\ main1.jpg') center/cover no-repeat;
+        background: url('../Src/vip\ main1.jpg') center/cover no-repeat;
         position: relative;
         display: flex;
         align-items: center;
@@ -72,7 +75,7 @@
       .special-card {
         border: none;
         background: var(--hotel-white);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s ease;
       }
       .special-card:hover {
@@ -101,13 +104,25 @@
         color: white;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
       }
+
+      @media screen and (max-width: 586px) {
+        .hero-text h1 {
+          font-size: 1.8rem;
+          font-weight: bold;
+          text-shadow: 1px 1px 3px rgba(65, 64, 64, 0.8);
+          letter-spacing: 1px;
+        }
+      }
     </style>
   </head>
-  <body>
-    <header class="b py-3 bg-light sticky-top">
+  <body id="home">
+    <header class="py-3 bg-light sticky-top">
       <div class="container d-flex justify-content-between align-items-center">
         <a href="../index.html"
-          ><img class="Logo-Img" src="../Src/Naks logo.jpg" alt=""
+          ><img
+            class="Logo-Img d-sm-block d-none"
+            src="../Src/Naks logo.jpg"
+            alt=""
         /></a>
         <a href="../index.html" class="btn btn-success rounded-0"
           >Back to Home</a
@@ -136,9 +151,9 @@
           style="max-width: 700px"
         >
           Step into a world of elegance at our VIP Bar, where every drink is
-          crafted with precision and served with <br />
-          style. This private space is perfect for intimate gatherings, business
-          meetings, or simply unwinding in peace.
+          crafted with precision and served <br />
+          with style. This private space is perfect for intimate gatherings,
+          business meetings, or simply unwinding in peace.
         </p>
       </div>
     </section>
@@ -162,13 +177,76 @@
     </section>
 
     <section class="container my-5">
-      <h3 class="fw-bold text-dark">What We Offer</h3>
-      <ul class="list-group highlight-list list-group-flush">
-        <li class="list-group-item">Premium wines and champagne</li>
-        <li class="list-group-item">Signature cocktails</li>
-        <li class="list-group-item">Plush seating with private booths</li>
-        <li class="list-group-item">Live piano and jazz music</li>
-      </ul>
+      <h3 class="fw-bold text-dark text-center mb-4">What We Offer</h3>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="card special-card h-100 p-3 text-center"
+            style="
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-weight: 500;
+              border-left: 3px solid rgb(80, 139, 80);
+            "
+          >
+            <h5 class="fw-bold text-success">Premium Wines</h5>
+            <p class="text-muted small mb-0">
+              A curated selection of premium wines and champagne.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="card special-card h-100 p-3 text-center"
+            style="
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-weight: 500;
+              border-left: 3px solid rgb(80, 139, 80);
+            "
+          >
+            <h5 class="fw-bold text-success">Signature Cocktails</h5>
+            <p class="text-muted small mb-0">
+              Expertly crafted cocktails tailored to your taste.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="card special-card h-100 p-3 text-center"
+            style="
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-weight: 500;
+              border-left: 3px solid rgb(80, 139, 80);
+            "
+          >
+            <h5 class="fw-bold text-success">Plush Seating</h5>
+            <p class="text-muted small mb-0">
+              Relax in luxurious booths with the ultimate comfort.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div
+            class="card special-card h-100 p-3 text-center"
+            style="
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-weight: 500;
+              border-left: 3px solid rgb(80, 139, 80);
+            "
+          >
+            <h5 class="fw-bold text-success">Live Music</h5>
+            <p class="text-muted small mb-0">
+              Enjoy live piano and jazz performances every evening.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Booking Button -->
@@ -193,16 +271,18 @@
           <div class="col-md-4 mb-4">
             <h5 class="fw-bold text-warning">Quick Links</h5>
             <ul class="list-unstyled">
-              <li><a href="#index" class="footer-link">Home</a></li>
+              <li><a href="#home" class="footer-link">Home</a></li>
               <li>
-                <a href="./SERVICES/eatry.html" class="footer-link">Eatery</a>
+                <a href="../SERVICES/eatry.html" class="footer-link">Eatery</a>
               </li>
               <li>
-                <a href="./SERVICES/gallery.html" class="footer-link"
+                <a href="../SERVICES/gallery.html" class="footer-link"
                   >Gallery</a
                 >
               </li>
-              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+              <li>
+                <a href="../contact.html" class="footer-link">Contact Us</a>
+              </li>
             </ul>
           </div>
 
@@ -226,9 +306,20 @@
 
         <hr class="bg-warning" />
 
-        <div class="text-center">
+        <div class="text-center mt-4">
           <p class="mb-0">
-            &copy; 2025 Naks Hotel & Towers. All Rights Reserved.
+            &copy; 2025 Naks Hotel & Towers. All Rights Reserved. <br />
+            <small class="text-white-50">
+              Designed & Developed by
+              <a
+                href="https://my-portfolio-gules-psi-14.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="fw-bold text-success text-decoration-none"
+              >
+                OBETECH
+              </a>
+            </small>
           </p>
         </div>
       </div>
