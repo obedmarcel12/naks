@@ -122,6 +122,10 @@ body.loaded #preloader {
 /* RESPONSIVE */
 
 @media screen and (max-width: 586px) {
+  header.sticky-top {
+    z-index: 1050 !important; /* higher than hero overlay */
+  }
+
   header {
     background: #facc15 !important;
   }
