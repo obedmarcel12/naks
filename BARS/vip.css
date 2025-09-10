@@ -10,6 +10,13 @@ header {
   color: white;
 }
 
+header.sticky-top {
+  position: -webkit-sticky !important; /* Safari */
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1050 !important;
+}
+
 /* Loader background */
 #preloader {
   position: fixed;
@@ -120,21 +127,7 @@ body.loaded #preloader {
 }
 
 /* RESPONSIVE */
-
 @media screen and (max-width: 586px) {
-  header.sticky-top {
-    z-index: 1050 !important; /* higher than hero overlay */
-  }
-
-  header {
-    background: #facc15 !important;
-  }
-
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
   header .container {
     flex-wrap: wrap;
   }
