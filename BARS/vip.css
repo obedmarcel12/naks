@@ -126,9 +126,9 @@ body.loaded #preloader {
     background: #facc15 !important;
   }
 
-  header .container {
-    flex-wrap: wrap !important;
-    overflow: hidden !important;
+  html,
+  header {
+    overflow-x: hidden;
   }
 
   .hero-text h1 {
