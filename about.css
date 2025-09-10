@@ -784,10 +784,12 @@ a {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
       sans-serif;
     font-weight: 500;
-    font-size: 10.3px;
+    font-size: 10.3px; /* fixed size */
     color: #333;
-    /* letter-spacing: 0.5px; */
     line-height: 2;
+
+    -webkit-text-size-adjust: none; /* prevent iOS from resizing text */
+    text-size-adjust: none; /* standard property */
   }
 
   .mission-section {
