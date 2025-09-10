@@ -10,13 +10,6 @@ header {
   color: white;
 }
 
-header.sticky-top {
-  position: -webkit-sticky !important; /* Safari */
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 1050 !important;
-}
-
 /* Loader background */
 #preloader {
   position: fixed;
@@ -84,6 +77,13 @@ body.loaded #preloader {
   font-weight: 600;
   font-size: 16px;
 }
+
+.equal-img {
+  height: 300px; /* set the same height for all */
+  width: 100%;
+  object-fit: cover; /* crops while keeping it sharp */
+  border-radius: 8px; /* optional: makes it look smoother */
+}
 .gallery img {
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -128,10 +128,6 @@ body.loaded #preloader {
 
 /* RESPONSIVE */
 @media screen and (max-width: 586px) {
-  header .container {
-    flex-wrap: wrap;
-  }
-
   .hero-text h1 {
     font-size: 1.7rem;
     font-weight: bold;
