@@ -784,10 +784,9 @@ a {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
       sans-serif;
     font-weight: 500;
-    font-size: 10.3px; /* fixed size */
+    font-size: 0.69rem;
     color: #333;
     line-height: 2;
-
     -webkit-text-size-adjust: none; /* prevent iOS from resizing text */
     text-size-adjust: none; /* standard property */
   }
