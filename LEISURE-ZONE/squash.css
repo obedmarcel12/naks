@@ -512,7 +512,7 @@ a {
 
   /* Hero Section */
   .hero-squash {
-    background: url('../Src/squash\ house.avif') center/cover no-repeat;
+    background: url('../Src/squash-hero-page.jpg') center/cover no-repeat;
     height: 35vh;
     display: flex;
     align-items: center;
