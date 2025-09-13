@@ -780,16 +780,17 @@ a {
     font-size: 1.3rem;
   }
 
-  .containt-div p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-      sans-serif;
-    font-weight: 500;
-    font-size: 0.66rem;
-    color: #333;
-    line-height: 2;
-    -webkit-text-size-adjust: none; /* prevent iOS from resizing text */
-    text-size-adjust: none; /* standard property */
-  }
+.containt-div p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  font-size: 0.66rem;           /* fixed relative to root font-size */
+  line-height: 2;
+  color: #333;
+
+  /* keep text from being auto-scaled on iOS/Safari */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
   .mission-section {
     display: flex;
