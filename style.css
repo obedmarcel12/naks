@@ -1149,10 +1149,19 @@ a {
     /* margin-left: 120px; */
   }
 
+  .btn-read {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    color: rgb(228, 227, 227) !important;
+  }
+
   .section-Hero span a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.91rem;
     color: rgb(228, 227, 227) !important;
   }
 
