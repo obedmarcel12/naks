@@ -303,7 +303,7 @@ body.loaded #preloader {
   padding-top: 90px;
 }
 
-.section-Hero button {
+/* .section-Hero button {
   width: 9vw;
   display: flex;
   align-items: center;
@@ -321,17 +321,22 @@ body.loaded #preloader {
   border-radius: 5px;
   height: 8vh;
   position: absolute;
-}
-
-.section-Hero button a:hover {
-  background: white;
-  color: rgb(29, 28, 28) !important;
-  text-shadow: 1px 2px 3px rgb(36, 35, 35);
-}
+} */
 
 .section-Hero img {
   width: 45vw;
   height: 90vh;
+}
+
+/* ===== Tablet specific tweaks ===== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .section-Hero img {
+    /* keep the image nicely visible on iPads */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    min-height: 300px; /* ensures it doesn’t collapse on taller tablets */
+  }
 }
 
 .section-Hero small {
@@ -501,17 +506,18 @@ body.loaded #preloader {
 
 .view-div a {
   background: rgb(224, 153, 46);
-  width: 15vw;
-  height: 7.5vh;
-  display: flex;
+  color: rgb(46, 46, 46);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  /* width: 15vw;
+  height: 7.5vh; */
+  /* display: flex;
   align-items: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: large;
-  font-weight: 600;
-  justify-content: center;
-  color: rgb(46, 46, 46);
-  text-decoration: none;
+  justify-content: center; */
+  /* text-decoration: none; */
 }
 
 .eatery-subtitle::after {
@@ -849,32 +855,6 @@ a {
     padding-top: 90px;
   }
 
-  .section-Hero button {
-    width: 15vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 9vh;
-  }
-
-  .section-Hero button a {
-    width: 15vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    border-radius: 5px;
-    height: 9vh;
-    position: absolute;
-  }
-
-  .section-Hero button a:hover {
-    background: white;
-    color: rgb(29, 28, 28) !important;
-    text-shadow: 1px 2px 3px rgb(36, 35, 35);
-  }
-
   .section-Hero h1 {
     font-size: 1.3rem !important;
   }
@@ -906,7 +886,7 @@ a {
     padding-top: 40px;
     padding-bottom: 30px;
   }
-
+  /* 
   .view-div a {
     background: rgb(224, 153, 46);
     width: 15vw;
@@ -919,7 +899,7 @@ a {
     justify-content: center;
     color: rgb(46, 46, 46);
     text-decoration: none;
-  }
+  } */
 
   .booking-btn {
     position: fixed;
@@ -984,38 +964,12 @@ a {
     padding-top: 90px;
   }
 
-  .section-Hero button {
-    width: 18vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
-  }
-
-  .section-Hero button a {
-    width: 18vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    border-radius: 5px;
-    height: 10vh;
-    position: absolute;
-  }
-
-  .section-Hero button a:hover {
-    background: white;
-    color: rgb(29, 28, 28) !important;
-    text-shadow: 1px 2px 3px rgb(36, 35, 35);
-  }
-
   .section-Hero h1 {
     font-size: 2rem !important;
   }
 
   .section-Hero img {
-    width: 90vw;
+    width: 70vw;
     height: 70vh;
   }
 
@@ -1042,7 +996,7 @@ a {
     padding-bottom: 30px;
   }
 
-  .view-div a {
+  /* .view-div a {
     background: rgb(224, 153, 46);
     width: 25vw;
     height: 8vh;
@@ -1054,7 +1008,7 @@ a {
     justify-content: center;
     color: rgb(46, 46, 46);
     text-decoration: none;
-  }
+  } */
 
   .dropdown-toggle-split {
     position: static !important;
@@ -1177,39 +1131,12 @@ a {
     padding-top: 90px;
   }
 
-  .section-Hero button {
-    width: 35vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 7vh;
-    border-radius: 30px;
-  }
-
-  .section-Hero button a {
-    width: 35vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    border-radius: 30px;
-    height: 7vh;
-    position: absolute;
-  }
-
-  .section-Hero button a:hover {
-    background: white;
-    color: rgb(29, 28, 28) !important;
-    text-shadow: 1px 2px 3px rgb(36, 35, 35);
-  }
-
   .section-Hero h1 {
     font-size: 1.3rem !important;
   }
 
   .section-Hero img {
-    width: 87vw;
+    width: 85vw;
     height: 40vh;
     border-radius: 3px;
   }
@@ -1237,7 +1164,7 @@ a {
     padding-bottom: 30px;
   }
 
-  .view-div a {
+  /* .view-div a {
     background: rgb(224, 153, 46);
     width: 40vw;
     height: 6vh;
@@ -1249,7 +1176,7 @@ a {
     justify-content: center;
     color: rgb(46, 46, 46);
     text-decoration: none;
-  }
+  } */
 
   .floating-car {
     bottom: 20px; /* 👈 stick near the bottom of the image */
