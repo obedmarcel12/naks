@@ -128,15 +128,10 @@ body.loaded #preloader {
 /* Lounge Outlet link */
 
 .Lounge-nav {
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #045d56;
-  width: 15vw;
-  height: 6vh;
-  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: small;
 }
 
 .right-nav .Lounge-nav:hover {
@@ -825,18 +820,6 @@ a {
     /* font-size: ; */
   }
 
-  .Lounge-nav {
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #045d56;
-    font-size: 0.8rem;
-    min-width: 125px;
-    min-height: 35px;
-  }
-
   .Logo-Img {
     width: 115px;
     border: 3px solid white;
@@ -849,7 +832,6 @@ a {
     justify-content: center;
     background: radial-gradient(rgb(8, 163, 8), rgb(16, 159, 202));
     width: 100%;
-
     height: auto;
     padding-bottom: 70px;
     padding-top: 90px;
@@ -861,7 +843,7 @@ a {
 
   .section-Hero img {
     width: 50vw;
-    height: 65vh;
+    height: 85vh;
   }
 
   .section-Hero small {
@@ -935,23 +917,52 @@ a {
 
   /*  */
 }
-/* 
- */
+
+@media screen and (max-width: 870px) {
+  /* Target only the Read more button inside the hero section */
+  .section-Hero .btn {
+    padding-left: 1.5rem !important; /* adjust as you like */
+    padding-right: 1.5rem !important;
+  }
+
+  .section-Hero {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background: radial-gradient(rgb(8, 163, 8), rgb(16, 159, 202));
+    width: 100%;
+    height: auto;
+    padding-bottom: 70px;
+    padding-top: 90px;
+  }
+
+  .section-Hero img {
+    width: 48vw;
+    height: 70vh;
+  }
+
+  .section-Hero h1 {
+    font-size: 1rem !important;
+  }
+
+  .section-Hero small {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: rgb(228, 227, 227);
+    /* margin-left: 120px; */
+  }
+
+  .section-Hero span a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: rgb(228, 227, 227) !important;
+  }
+}
 
 /* TABLET */
 @media screen and (max-width: 768px) {
-  .Lounge-nav {
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #045d56;
-    font-size: 0.8rem;
-    min-width: 125px;
-    min-height: 35px;
-  }
-
   .section-Hero {
     display: flex !important;
     align-items: center !important;
@@ -969,8 +980,8 @@ a {
   }
 
   .section-Hero img {
-    width: 70vw;
-    height: 70vh;
+    width: 85vw;
+    height: 75vh;
   }
 
   .section-Hero small {
@@ -1065,19 +1076,6 @@ a {
     /* padding: 0.5rem 0.8rem; */
     font-size: 0.9rem;
     transition: color 0.2s ease;
-  }
-
-  .right-nav .Lounge-nav {
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #045d56;
-    font-size: 0.7rem;
-    height: 4vh;
-    min-width: 120px;
-    min-height: 30px;
   }
 
   /* Social icons */
